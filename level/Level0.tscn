@@ -1,3 +1,21 @@
-[gd_scene format=2]
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://environment/LevelMeshLibrary.tres" type="MeshLibrary" id=1]
+[ext_resource path="res://asset/kenney/spacekit2/terrain_sideCliff.glb" type="PackedScene" id=2]
 
 [node name="Level0" type="Spatial"]
+
+[node name="GridMap" type="GridMap" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000985384, 0.0100805, 0.00195384 )
+mesh_library = ExtResource( 1 )
+cell_size = Vector3( 1, 0.5, 1 )
+data = {
+"cells": PoolIntArray( 0, 0, 0, 1, 0, 9, 65534, 0, 1048585, 65535, 0, 6, 0, 1, 10, 65534, 1, 1048585, 65535, 1, 10, 0, 65535, 9, 65535, 65535, 9 )
+}
+__meta__ = {
+"_editor_clip_": 0,
+"_editor_floor_": Vector3( 0, 0, 0 )
+}
+
+[node name="terrain_sideCliff" parent="." instance=ExtResource( 2 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2, 0, 0 )
