@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/AncientCosmicPortal-0-Portal_Stairs.obj-bde4380eaa2b5593e28eb934e44dd72b.mesh"
+
+[deps]
+
+files=[ "res://.import/AncientCosmicPortal-0-Portal_Stairs.obj-bde4380eaa2b5593e28eb934e44dd72b.mesh" ]
+
+source_file="res://asset/maxparata/portal/AncientCosmicPortal-0-Portal_Stairs.obj"
+dest_files=[ "res://.import/AncientCosmicPortal-0-Portal_Stairs.obj-bde4380eaa2b5593e28eb934e44dd72b.mesh", "res://.import/AncientCosmicPortal-0-Portal_Stairs.obj-bde4380eaa2b5593e28eb934e44dd72b.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
