@@ -7,9 +7,9 @@ sky_curve = 0.12
 ground_bottom_color = Color( 0.24, 0.1872, 0.168, 1 )
 ground_horizon_color = Color( 0.65, 0.481, 0.3965, 1 )
 ground_curve = 0.015
-sun_color = Color( 1, 0.666667, 0.5, 1 )
-sun_latitude = 8.0
-sun_longitude = 75.0
+sun_color = Color( 1, 0.666667, 0.501961, 1 )
+sun_latitude = 10.0
+sun_longitude = 80.0
 sun_energy = 42.0
 
 [resource]

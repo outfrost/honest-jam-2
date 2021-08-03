@@ -32,7 +32,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="New Game Project"
+config/name="Twilight Zone"
 run/main_scene="res://game/Game.tscn"
 config/icon="res://icon.png"
 
@@ -68,4 +68,6 @@ common/physics_fps=160
 
 [rendering]
 
+quality/directional_shadow/size=8192
+quality/filters/anisotropic_filter_level=8
 environment/default_environment="res://default_env.tres"
