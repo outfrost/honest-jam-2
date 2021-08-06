@@ -1,16 +1,19 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://environment/spacekit2/terrain_sideCliff.tscn" type="PackedScene" id=1]
 [ext_resource path="res://environment/spacekit2/terrain_ramp.tscn" type="PackedScene" id=2]
 [ext_resource path="res://environment/spacekit2/terrain_sideEnd.tscn" type="PackedScene" id=3]
 [ext_resource path="res://environment/spacekit2/terrain.tscn" type="PackedScene" id=4]
+[ext_resource path="res://level/Tile.tscn" type="PackedScene" id=5]
 [ext_resource path="res://environment/spacekit2/terrain_side.tscn" type="PackedScene" id=6]
 [ext_resource path="res://environment/spacekit2/terrain_sideCorner.tscn" type="PackedScene" id=7]
 [ext_resource path="res://environment/spacekit2/terrain_sideCornerInner.tscn" type="PackedScene" id=8]
 [ext_resource path="res://environment/spacekit2/rock_crystals.tscn" type="PackedScene" id=9]
+[ext_resource path="res://level/Level.gd" type="Script" id=10]
 [ext_resource path="res://level/Level0.lmbake" type="BakedLightmapData" id=12]
 
 [node name="Level0" type="Spatial"]
+script = ExtResource( 10 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( -0.173648, -0.17101, 0.969846, 0, 0.984808, 0.173648, -0.984808, 0.0301536, -0.17101, 0, 10, 0 )
@@ -22,19 +25,39 @@ extents = Vector3( 20, 10, 20 )
 environment_mode = 1
 light_data = ExtResource( 12 )
 
+[node name="Tiles" type="Spatial" parent="."]
+
+[node name="Tile" parent="Tiles" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.5, -12 )
+
+[node name="Tile2" parent="Tiles" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.5, -4 )
+
+[node name="Tile3" parent="Tiles" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.5, -8 )
+
+[node name="Tile4" parent="Tiles" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.5, -10 )
+
+[node name="Tile5" parent="Tiles" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.5, -6 )
+
+[node name="Tile6" parent="Tiles" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.5, -10 )
+
+[node name="Tile7" parent="Tiles" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.5, -12 )
+
+[node name="Tile8" parent="Tiles" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.5, -12 )
+
+[node name="Tile9" parent="Tiles" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.5, -10 )
+
+[node name="Tile10" parent="Tiles" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.5, -8 )
+
 [node name="Terrain" type="Spatial" parent="."]
-
-[node name="terrain_sideCornerInner" parent="Terrain" instance=ExtResource( 8 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4, 0, -3 )
-
-[node name="terrain_sideCornerInner3" parent="Terrain" instance=ExtResource( 8 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6, 0, -7 )
-
-[node name="terrain_sideCornerInner29" parent="Terrain" instance=ExtResource( 8 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7, 0, -9 )
-
-[node name="terrain_sideCornerInner24" parent="Terrain" instance=ExtResource( 8 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4, 0, -5 )
 
 [node name="terrain_sideCornerInner4" parent="Terrain" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 3, 0, -14 )
@@ -150,12 +173,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -2 )
 [node name="terrain4" parent="Terrain" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.5, -4 )
 
-[node name="terrain21" parent="Terrain" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.5, -4 )
-
-[node name="terrain23" parent="Terrain" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.5, -3 )
-
 [node name="terrain40" parent="Terrain" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -0.5, -9 )
 
@@ -189,32 +206,17 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -0.5, -9 )
 [node name="terrain14" parent="Terrain" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, -3 )
 
-[node name="terrain26" parent="Terrain" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.5, -8 )
-
-[node name="terrain27" parent="Terrain" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.5, -8 )
-
 [node name="terrain28" parent="Terrain" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.5, -9 )
 
 [node name="terrain29" parent="Terrain" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.5, -9 )
 
-[node name="terrain50" parent="Terrain" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.5, -6 )
-
 [node name="terrain51" parent="Terrain" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.5, -6 )
 
 [node name="terrain52" parent="Terrain" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.5, -7 )
-
-[node name="terrain57" parent="Terrain" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.5, -6 )
-
-[node name="terrain53" parent="Terrain" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.5, -7 )
 
 [node name="terrain30" parent="Terrain" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.5, -10 )
@@ -294,9 +296,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.5, -6 )
 [node name="terrain86" parent="Terrain" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0.5, -8 )
 
-[node name="terrain87" parent="Terrain" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.5, -5 )
-
 [node name="terrain88" parent="Terrain" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.5, -6 )
 
@@ -317,9 +316,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -2 )
 
 [node name="terrain97" parent="Terrain" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.5, -5 )
-
-[node name="terrain114" parent="Terrain" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.5, -4 )
 
 [node name="terrain115" parent="Terrain" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.5, -4 )
@@ -393,9 +389,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.5, -13 )
 [node name="terrain10" parent="Terrain" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0.5, -7 )
 
-[node name="terrain11" parent="Terrain" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.5, -10 )
-
 [node name="terrain_ramp" parent="Terrain" instance=ExtResource( 2 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1, -0.5, -9 )
 
@@ -456,21 +449,6 @@ transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 6, 0, -6 
 [node name="terrain_sideCliff13" parent="Terrain" instance=ExtResource( 1 )]
 transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 7, 0, -8 )
 
-[node name="terrain12" parent="Terrain" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.5, -11 )
-
-[node name="terrain13" parent="Terrain" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.5, -10 )
-
-[node name="terrain24" parent="Terrain" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.5, -11 )
-
-[node name="terrain38" parent="Terrain" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.5, -12 )
-
-[node name="terrain25" parent="Terrain" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.5, -12 )
-
 [node name="terrain_sideCliff11" parent="Terrain" instance=ExtResource( 1 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5, 0, -1 )
 
@@ -482,9 +460,6 @@ transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 3, 0, -
 
 [node name="terrain_sideCliff16" parent="Terrain" instance=ExtResource( 1 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 5, 0, -4 )
-
-[node name="terrain_sideCliff17" parent="Terrain" instance=ExtResource( 1 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 8, 0, -8 )
 
 [node name="terrain_sideCliff23" parent="Terrain" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 7, 0, -13 )
@@ -683,3 +658,63 @@ transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9, 0, -
 
 [node name="terrain_sideEnd2" parent="Terrain" instance=ExtResource( 3 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, -1, 0, 4.37114e-08, 9, 0, -12 )
+
+[node name="terrain12" parent="Terrain" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.5, -11 )
+
+[node name="terrain24" parent="Terrain" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.5, -11 )
+
+[node name="terrain38" parent="Terrain" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.5, -12 )
+
+[node name="terrain25" parent="Terrain" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.5, -12 )
+
+[node name="terrain_sideCornerInner" parent="Terrain" instance=ExtResource( 8 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4, 0, -3 )
+
+[node name="terrain21" parent="Terrain" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.5, -4 )
+
+[node name="terrain23" parent="Terrain" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.5, -3 )
+
+[node name="terrain114" parent="Terrain" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.5, -4 )
+
+[node name="terrain_sideCornerInner3" parent="Terrain" instance=ExtResource( 8 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6, 0, -7 )
+
+[node name="terrain26" parent="Terrain" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.5, -8 )
+
+[node name="terrain27" parent="Terrain" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.5, -8 )
+
+[node name="terrain53" parent="Terrain" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.5, -7 )
+
+[node name="terrain_sideCornerInner29" parent="Terrain" instance=ExtResource( 8 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7, 0, -9 )
+
+[node name="terrain11" parent="Terrain" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.5, -10 )
+
+[node name="terrain13" parent="Terrain" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.5, -10 )
+
+[node name="terrain_sideCliff17" parent="Terrain" instance=ExtResource( 1 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 8, 0, -8 )
+
+[node name="terrain_sideCornerInner24" parent="Terrain" instance=ExtResource( 8 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4, 0, -5 )
+
+[node name="terrain50" parent="Terrain" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.5, -6 )
+
+[node name="terrain57" parent="Terrain" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.5, -6 )
+
+[node name="terrain87" parent="Terrain" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.5, -5 )

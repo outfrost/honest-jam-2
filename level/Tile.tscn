@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://level/Tile.gd" type="Script" id=1]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.95, 0.2, 0.95 )
+
+[node name="Tile" type="Position3D"]
+script = ExtResource( 1 )
+
+[node name="Visualisation" type="Spatial" parent="."]
+
+[node name="Visualisation1" type="CollisionShape" parent="Visualisation"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.25, 1 )
+shape = SubResource( 1 )
+disabled = true
+
+[node name="Visualisation2" type="CollisionShape" parent="Visualisation"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.25, 1 )
+shape = SubResource( 1 )
+disabled = true
+
+[node name="Visualisation3" type="CollisionShape" parent="Visualisation"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.25, 1 )
+shape = SubResource( 1 )
+disabled = true
+
+[node name="Visualisation4" type="CollisionShape" parent="Visualisation"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.25, 1 )
+shape = SubResource( 1 )
+disabled = true
+
+[node name="Visualisation5" type="CollisionShape" parent="Visualisation"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.25, 1 )
+shape = SubResource( 1 )
+disabled = true
+
+[node name="Visualisation6" type="CollisionShape" parent="Visualisation"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.25, 1 )
+shape = SubResource( 1 )
+disabled = true
+
+[node name="Visualisation7" type="CollisionShape" parent="Visualisation"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.25, 1 )
+shape = SubResource( 1 )
+disabled = true
+
+[node name="Visualisation8" type="CollisionShape" parent="Visualisation"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.25, 1 )
+shape = SubResource( 1 )
+disabled = true
