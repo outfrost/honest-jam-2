@@ -1,21 +1,24 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://game/ui-theme/ui_theme.tres" type="Theme" id=1]
 [ext_resource path="res://level/Level0.tscn" type="PackedScene" id=2]
 [ext_resource path="res://game/menu/MainMenu.tscn" type="PackedScene" id=3]
 [ext_resource path="res://game/loading/TransitionScreen.tscn" type="PackedScene" id=4]
 [ext_resource path="res://game/Game.gd" type="Script" id=5]
+[ext_resource path="res://sound/gameplay.ogg" type="AudioStream" id=6]
 
 [node name="Game" type="Node"]
 script = ExtResource( 5 )
 level_scene = ExtResource( 2 )
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+bus = "Music"
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 0.707107, -0.454519, 0.541675, 0, 0.766045, 0.642787, -0.707107, -0.454519, 0.541675, 8, 7, 0 )
 current = true
-far = 200.0
+far = 500.0
 
 [node name="LevelContainer" type="Spatial" parent="."]
 
@@ -32,3 +35,5 @@ __meta__ = {
 
 [node name="TransitionScreen" parent="UI" instance=ExtResource( 4 )]
 visible = false
+fade_in_duration = 1.0
+fade_out_duration = 1.0
