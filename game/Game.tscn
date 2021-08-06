@@ -1,17 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://game/ui-theme/ui_theme.tres" type="Theme" id=1]
-[ext_resource path="res://level/Level0.tscn" type="PackedScene" id=2]
 [ext_resource path="res://game/menu/MainMenu.tscn" type="PackedScene" id=3]
 [ext_resource path="res://game/loading/TransitionScreen.tscn" type="PackedScene" id=4]
 [ext_resource path="res://game/Game.gd" type="Script" id=5]
-[ext_resource path="res://asdf.shader" type="Shader" id=6]
-
-[sub_resource type="QuadMesh" id=1]
-size = Vector2( 2, 2 )
-
-[sub_resource type="ShaderMaterial" id=2]
-shader = ExtResource( 6 )
 
 [node name="Game" type="Node"]
 script = ExtResource( 5 )
@@ -23,15 +15,7 @@ transform = Transform( 0.707107, -0.454519, 0.541675, 0, 0.766045, 0.642787, -0.
 current = true
 far = 200.0
 
-[node name="MeshInstance" type="MeshInstance" parent="Camera"]
-visible = false
-cast_shadow = 0
-extra_cull_margin = 1000.0
-generate_lightmap = false
-mesh = SubResource( 1 )
-material/0 = SubResource( 2 )
-
-[node name="Level0" parent="." instance=ExtResource( 2 )]
+[node name="LevelContainer" type="Spatial" parent="."]
 
 [node name="UI" type="Control" parent="."]
 anchor_right = 1.0
