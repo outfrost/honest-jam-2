@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
+[ext_resource path="res://asset/Wolf1061.jpg" type="Texture" id=1]
 [ext_resource path="res://game/menu/CreditsPopup.gd" type="Script" id=2]
 [ext_resource path="res://game/ui-theme/ui_theme.tres" type="Theme" id=3]
 [ext_resource path="res://game/menu/MainMenu.gd" type="Script" id=4]
@@ -21,6 +22,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource( 1 )
 expand = true
 stretch_mode = 7
 __meta__ = {
@@ -55,10 +57,12 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-anchor_left = 0.4
-anchor_top = 0.5
-anchor_right = 0.6
+anchor_left = 0.5
+anchor_top = 0.6
+anchor_right = 0.5
 anchor_bottom = 0.9
+margin_left = -80.0
+margin_right = 80.0
 grow_horizontal = 2
 theme = ExtResource( 3 )
 custom_constants/separation = 10
@@ -67,27 +71,17 @@ __meta__ = {
 }
 
 [node name="PlayButton" type="Button" parent="VBoxContainer"]
-margin_right = 256.0
-margin_bottom = 22.0
+margin_right = 160.0
+margin_bottom = 29.0
 text = "Play"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ChooseLevelButton" type="Button" parent="VBoxContainer"]
-margin_top = 32.0
-margin_right = 256.0
-margin_bottom = 54.0
-disabled = true
-text = "Choose level"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="OptionsButton" type="Button" parent="VBoxContainer"]
-margin_top = 64.0
-margin_right = 256.0
-margin_bottom = 86.0
+margin_top = 39.0
+margin_right = 160.0
+margin_bottom = 68.0
 disabled = true
 text = "Options"
 __meta__ = {
@@ -95,18 +89,18 @@ __meta__ = {
 }
 
 [node name="CreditsButton" type="Button" parent="VBoxContainer"]
-margin_top = 96.0
-margin_right = 256.0
-margin_bottom = 118.0
+margin_top = 78.0
+margin_right = 160.0
+margin_bottom = 107.0
 text = "Credits"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
-margin_top = 128.0
-margin_right = 256.0
-margin_bottom = 150.0
+margin_top = 117.0
+margin_right = 160.0
+margin_bottom = 146.0
 text = "Quit"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -144,7 +138,7 @@ anchor_bottom = 1.0
 margin_left = 16.0
 margin_top = 16.0
 margin_right = -8.0
-margin_bottom = -54.0
+margin_bottom = -61.0
 bbcode_enabled = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -157,7 +151,7 @@ anchor_bottom = 1.0
 margin_left = 8.0
 margin_top = 16.0
 margin_right = -16.0
-margin_bottom = -54.0
+margin_bottom = -61.0
 bbcode_enabled = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -169,9 +163,11 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -176.0
-margin_top = -38.0
+margin_top = -32.0
 margin_right = -16.0
 margin_bottom = -16.0
+grow_horizontal = 0
+grow_vertical = 0
 text = "Close"
 __meta__ = {
 "_edit_use_anchors_": false
