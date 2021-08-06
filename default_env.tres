@@ -4,7 +4,7 @@
 sky_top_color = Color( 0.74902, 0.67451, 0.6, 1 )
 sky_horizon_color = Color( 0.65098, 0.482353, 0.396078, 1 )
 sky_curve = 0.12
-ground_bottom_color = Color( 0.827451, 0.521569, 0.388235, 1 )
+ground_bottom_color = Color( 0.24, 0.2056, 0.192, 1 )
 ground_horizon_color = Color( 0.65098, 0.482353, 0.396078, 1 )
 ground_curve = 0.015
 sun_color = Color( 1, 0.627451, 0.439216, 1 )
