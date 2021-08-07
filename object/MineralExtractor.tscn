@@ -11,7 +11,7 @@
 [ext_resource path="res://object/craft_cargoB.tscn" type="PackedScene" id=9]
 [ext_resource path="res://asset/kenney/spacekit2/chimney_detailed.glb" type="PackedScene" id=10]
 [ext_resource path="res://asset/kenney/spacekit2/dark.material" type="Material" id=12]
-[ext_resource path="res://asset/metalGreen.material" type="Material" id=13]
+[ext_resource path="res://asset/metalMineral.material" type="Material" id=13]
 
 [node name="OreExtractor" type="Spatial"]
 
@@ -76,7 +76,6 @@ material/3 = ExtResource( 13 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.19209e-07, 0, 3 )
 
 [node name="hangar_largeB" parent="hangar_largeB/hangar_largeB2/tmpParent" index="0"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 1.5 )
 material/3 = ExtResource( 13 )
 
 [node name="hangar_smallB" parent="hangar_largeB" instance=ExtResource( 7 )]
