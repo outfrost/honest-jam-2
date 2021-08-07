@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://asset/kenney/spacekit2/machine_barrelLarge.glb" type="PackedScene" id=1]
 [ext_resource path="res://asset/kenney/spacekit2/hangar_largeB.glb" type="PackedScene" id=2]
@@ -10,32 +10,85 @@
 [ext_resource path="res://asset/kenney/spacekit2/platform_small.glb" type="PackedScene" id=8]
 [ext_resource path="res://object/craft_cargoB.tscn" type="PackedScene" id=9]
 [ext_resource path="res://asset/kenney/spacekit2/chimney_detailed.glb" type="PackedScene" id=10]
+[ext_resource path="res://asset/mineral.material" type="Material" id=11]
+[ext_resource path="res://asset/kenney/spacekit2/dark.material" type="Material" id=12]
 
 [node name="OreExtractor" type="Spatial"]
 
 [node name="machine_generatorLarge" parent="." instance=ExtResource( 5 )]
 transform = Transform( -1.09278e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.09278e-08, 1.825, 0.25, 0.5 )
 
+[node name="machine_generatorLarge" parent="machine_generatorLarge/tmpParent" index="0"]
+material/0 = ExtResource( 11 )
+
 [node name="barrels" parent="." instance=ExtResource( 6 )]
 transform = Transform( 0.239934, 0, -0.0702253, 0, 0.25, 0, 0.0702253, 0, 0.239934, 0.655696, 0, 0.93213 )
+
+[node name="barrel" parent="barrels/tmpParent/barrels" index="0"]
+material/1 = ExtResource( 11 )
+
+[node name="barrel2" parent="barrels/tmpParent/barrels" index="1"]
+material/1 = ExtResource( 11 )
+
+[node name="barrel3" parent="barrels/tmpParent/barrels" index="2"]
+material/1 = ExtResource( 11 )
+
+[node name="barrel4" parent="barrels/tmpParent/barrels" index="3"]
+material/1 = ExtResource( 11 )
 
 [node name="barrels2" parent="." instance=ExtResource( 6 )]
 transform = Transform( 0.178105, 0, -0.175439, 0, 0.25, 0, 0.175439, 0, 0.178105, 1.0934, 0, 0.93213 )
 
+[node name="barrel" parent="barrels2/tmpParent/barrels" index="0"]
+material/1 = ExtResource( 11 )
+
+[node name="barrel2" parent="barrels2/tmpParent/barrels" index="1"]
+material/1 = ExtResource( 11 )
+
+[node name="barrel3" parent="barrels2/tmpParent/barrels" index="2"]
+material/1 = ExtResource( 11 )
+
+[node name="barrel4" parent="barrels2/tmpParent/barrels" index="3"]
+material/1 = ExtResource( 11 )
+
 [node name="barrels3" parent="." instance=ExtResource( 6 )]
 transform = Transform( 0.0557019, 0, -0.243716, 0, 0.25, 0, 0.243716, 0, 0.0557019, 1.27293, 0, 1.02709 )
+
+[node name="barrel" parent="barrels3/tmpParent/barrels" index="0"]
+material/1 = ExtResource( 11 )
+
+[node name="barrel2" parent="barrels3/tmpParent/barrels" index="1"]
+material/1 = ExtResource( 11 )
+
+[node name="barrel3" parent="barrels3/tmpParent/barrels" index="2"]
+material/1 = ExtResource( 11 )
+
+[node name="barrel4" parent="barrels3/tmpParent/barrels" index="3"]
+material/1 = ExtResource( 11 )
 
 [node name="hangar_largeB" parent="." instance=ExtResource( 2 )]
 transform = Transform( -1.09278e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.09278e-08, 2, 0, 0.5 )
 
+[node name="hangar_largeB" parent="hangar_largeB/tmpParent" index="0"]
+material/3 = ExtResource( 11 )
+
 [node name="hangar_largeB2" parent="hangar_largeB" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.19209e-07, 0, 3 )
+
+[node name="hangar_largeB" parent="hangar_largeB/hangar_largeB2/tmpParent" index="0"]
+material/3 = ExtResource( 11 )
 
 [node name="hangar_smallB" parent="hangar_largeB" instance=ExtResource( 7 )]
 transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 5.3, 0, 3.75 )
 
+[node name="hangar_smallB" parent="hangar_largeB/hangar_smallB/tmpParent" index="0"]
+material/2 = ExtResource( 11 )
+
 [node name="hangar_smallB2" parent="hangar_largeB" instance=ExtResource( 7 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4, 0, 8.5 )
+
+[node name="hangar_smallB" parent="hangar_largeB/hangar_smallB2/tmpParent" index="0"]
+material/2 = ExtResource( 11 )
 
 [node name="chimney3" parent="hangar_largeB" instance=ExtResource( 3 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1, 0.5, 2.6 )
@@ -46,14 +99,26 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.19209
 [node name="machine_barrel" parent="hangar_largeB" instance=ExtResource( 4 )]
 transform = Transform( 2.62268e-07, 0, -2, 0, 2, 0, 2, 0, 2.62268e-07, 5, 1, -2.5 )
 
+[node name="machine_barrel" parent="hangar_largeB/machine_barrel/tmpParent" index="0"]
+material/1 = ExtResource( 11 )
+
 [node name="machine_barrelLarge" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.375, 0, -1.125 )
+
+[node name="machine_barrelLarge" parent="machine_barrelLarge/tmpParent" index="0"]
+material/1 = ExtResource( 11 )
 
 [node name="machine_barrelLarge2" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25, 0, -1.125 )
 
+[node name="machine_barrelLarge" parent="machine_barrelLarge2/tmpParent" index="0"]
+material/1 = ExtResource( 11 )
+
 [node name="platform_small2" parent="." instance=ExtResource( 8 )]
 transform = Transform( 0.35, 0, 0, 0, 0.1, 0, 0, 0, 0.35, 0.395, 0, 1 )
+
+[node name="platform_small" parent="platform_small2/tmpParent" index="0"]
+material/0 = ExtResource( 12 )
 
 [node name="chimney_detailed" parent="." instance=ExtResource( 10 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.375, 0, -0.6 )
@@ -63,3 +128,20 @@ transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.5, 0, -0.6 )
 
 [node name="craft_cargoB" parent="." instance=ExtResource( 9 )]
 transform = Transform( -0.167283, 0, -0.185786, 0, 0.25, 0, 0.185786, 0, -0.167283, 1.635, 0, 1.635 )
+
+[node name="craft_cargoB" parent="craft_cargoB/tmpParent" index="0"]
+material/3 = ExtResource( 11 )
+
+[editable path="machine_generatorLarge"]
+[editable path="barrels"]
+[editable path="barrels2"]
+[editable path="barrels3"]
+[editable path="hangar_largeB"]
+[editable path="hangar_largeB/hangar_largeB2"]
+[editable path="hangar_largeB/hangar_smallB"]
+[editable path="hangar_largeB/hangar_smallB2"]
+[editable path="hangar_largeB/machine_barrel"]
+[editable path="machine_barrelLarge"]
+[editable path="machine_barrelLarge2"]
+[editable path="platform_small2"]
+[editable path="craft_cargoB"]
