@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=2]
+
+[ext_resource path="res://environment/water_normal.png" type="Texture" id=1]
+[ext_resource path="res://asset/water_shader.tres" type="Shader" id=2]
+
+[resource]
+shader = ExtResource( 2 )
+shader_param/Speed = 0.025
+shader_param/NormalMap = ExtResource( 1 )
