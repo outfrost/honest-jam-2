@@ -10,7 +10,7 @@
 [ext_resource path="res://asset/kenney/spacekit2/hangar_smallB.glb" type="PackedScene" id=8]
 [ext_resource path="res://asset/kenney/spacekit2/hangar_largeB.glb" type="PackedScene" id=9]
 [ext_resource path="res://asset/kenney/spacekit2/barrels.glb" type="PackedScene" id=10]
-[ext_resource path="res://asset/metalYellow.material" type="Material" id=11]
+[ext_resource path="res://asset/metalOre.material" type="Material" id=11]
 [ext_resource path="res://asset/kenney/spacekit2/dark.material" type="Material" id=12]
 
 [node name="MineralExtractor" type="Spatial"]

@@ -6,7 +6,7 @@
 [ext_resource path="res://asset/kenney/spacekit2/pipe_cornerRound.glb" type="PackedScene" id=4]
 [ext_resource path="res://asset/kenney/spacekit2/machine_generatorLarge.glb" type="PackedScene" id=5]
 [ext_resource path="res://asset/kenney/spacekit2/hangar_roundB.glb" type="PackedScene" id=6]
-[ext_resource path="res://asset/metalBlue.material" type="Material" id=7]
+[ext_resource path="res://asset/metalWater.material" type="Material" id=7]
 
 [node name="WaterExtractor" type="Spatial"]
 
