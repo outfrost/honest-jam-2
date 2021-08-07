@@ -16,7 +16,7 @@
 [node name="HydroPonics" type="Spatial"]
 
 [node name="corridor_split" parent="." instance=ExtResource( 2 )]
-transform = Transform( 0.25, 0, -2.98023e-08, 0, 0.25, 0, 2.98023e-08, 0, 0.25, -0.125, 0, -1 )
+transform = Transform( 0.25, 0, -2.98023e-08, 0, 0.25, 0, 2.98023e-08, 0, 0.25, -0.125, 0, 1 )
 
 [node name="corridor_cornerRound2" parent="corridor_split" instance=ExtResource( 3 )]
 transform = Transform( -1, 0, -3.17865e-08, 0, 1, 0, 3.17865e-08, 0, -1, 4, 0, 2 )
