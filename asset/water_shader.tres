@@ -1,52 +1,52 @@
 [gd_resource type="VisualShader" load_steps=17 format=2]
 
-[sub_resource type="VisualShaderNodeTextureUniform" id=6]
+[sub_resource type="VisualShaderNodeTextureUniform" id=1]
 uniform_name = "NormalMap"
 texture_type = 2
 
-[sub_resource type="VisualShaderNodeVectorDecompose" id=10]
+[sub_resource type="VisualShaderNodeVectorDecompose" id=2]
 
-[sub_resource type="VisualShaderNodeScalarOp" id=11]
+[sub_resource type="VisualShaderNodeScalarOp" id=3]
 operator = 1
 
-[sub_resource type="VisualShaderNodeVectorCompose" id=12]
+[sub_resource type="VisualShaderNodeVectorCompose" id=4]
 
-[sub_resource type="VisualShaderNodeScalarOp" id=13]
+[sub_resource type="VisualShaderNodeScalarOp" id=5]
 
-[sub_resource type="VisualShaderNodeColorConstant" id=14]
+[sub_resource type="VisualShaderNodeColorConstant" id=6]
 constant = Color( 0.690196, 0.690196, 0.690196, 1 )
 
-[sub_resource type="VisualShaderNodeScalarConstant" id=15]
+[sub_resource type="VisualShaderNodeScalarConstant" id=7]
 constant = 1.0
 
-[sub_resource type="VisualShaderNodeScalarConstant" id=16]
+[sub_resource type="VisualShaderNodeScalarConstant" id=8]
 constant = 0.5
 
-[sub_resource type="VisualShaderNodeScalarConstant" id=17]
+[sub_resource type="VisualShaderNodeScalarConstant" id=9]
 constant = 0.5
 
-[sub_resource type="VisualShaderNodeInput" id=1]
+[sub_resource type="VisualShaderNodeInput" id=10]
 input_name = "time"
 
-[sub_resource type="VisualShaderNodeScalarUniform" id=18]
+[sub_resource type="VisualShaderNodeScalarUniform" id=11]
 uniform_name = "Speed"
 
-[sub_resource type="VisualShaderNodeScalarFunc" id=19]
+[sub_resource type="VisualShaderNodeScalarFunc" id=12]
 function = 28
 
-[sub_resource type="VisualShaderNodeScalarOp" id=2]
+[sub_resource type="VisualShaderNodeScalarOp" id=13]
 default_input_values = [ 0, 0.0, 1, 20.0 ]
 operator = 4
 
-[sub_resource type="VisualShaderNodeScalarOp" id=3]
+[sub_resource type="VisualShaderNodeScalarOp" id=14]
 default_input_values = [ 0, 0.0, 1, 20.0 ]
 operator = 3
 
-[sub_resource type="VisualShaderNodeScalarOp" id=4]
+[sub_resource type="VisualShaderNodeScalarOp" id=15]
 default_input_values = [ 0, 0.0, 1, 4.0 ]
 operator = 2
 
-[sub_resource type="VisualShaderNodeInput" id=5]
+[sub_resource type="VisualShaderNodeInput" id=16]
 output_port_for_preview = 0
 input_name = "uv"
 
@@ -140,36 +140,36 @@ void light() {
 "
 graph_offset = Vector2( 68.2962, -89.5 )
 nodes/fragment/0/position = Vector2( 1680, 40 )
-nodes/fragment/2/node = SubResource( 1 )
+nodes/fragment/2/node = SubResource( 10 )
 nodes/fragment/2/position = Vector2( 80, 80 )
-nodes/fragment/3/node = SubResource( 2 )
+nodes/fragment/3/node = SubResource( 13 )
 nodes/fragment/3/position = Vector2( 380, 360 )
-nodes/fragment/4/node = SubResource( 3 )
+nodes/fragment/4/node = SubResource( 14 )
 nodes/fragment/4/position = Vector2( 580, 360 )
-nodes/fragment/5/node = SubResource( 4 )
+nodes/fragment/5/node = SubResource( 15 )
 nodes/fragment/5/position = Vector2( 780, 240 )
-nodes/fragment/6/node = SubResource( 5 )
+nodes/fragment/6/node = SubResource( 16 )
 nodes/fragment/6/position = Vector2( 540, 0 )
-nodes/fragment/10/node = SubResource( 6 )
+nodes/fragment/10/node = SubResource( 1 )
 nodes/fragment/10/position = Vector2( 1400, 300 )
-nodes/fragment/12/node = SubResource( 10 )
+nodes/fragment/12/node = SubResource( 2 )
 nodes/fragment/12/position = Vector2( 740, 0 )
-nodes/fragment/13/node = SubResource( 11 )
+nodes/fragment/13/node = SubResource( 3 )
 nodes/fragment/13/position = Vector2( 980, 220 )
-nodes/fragment/14/node = SubResource( 12 )
+nodes/fragment/14/node = SubResource( 4 )
 nodes/fragment/14/position = Vector2( 1180, 300 )
-nodes/fragment/15/node = SubResource( 13 )
+nodes/fragment/15/node = SubResource( 5 )
 nodes/fragment/15/position = Vector2( 980, 340 )
-nodes/fragment/16/node = SubResource( 14 )
+nodes/fragment/16/node = SubResource( 6 )
 nodes/fragment/16/position = Vector2( 1460, 0 )
-nodes/fragment/17/node = SubResource( 15 )
+nodes/fragment/17/node = SubResource( 7 )
 nodes/fragment/17/position = Vector2( 1400, 80 )
-nodes/fragment/18/node = SubResource( 16 )
+nodes/fragment/18/node = SubResource( 8 )
 nodes/fragment/18/position = Vector2( 1400, 200 )
-nodes/fragment/19/node = SubResource( 17 )
+nodes/fragment/19/node = SubResource( 9 )
 nodes/fragment/19/position = Vector2( 1400, 140 )
-nodes/fragment/20/node = SubResource( 18 )
+nodes/fragment/20/node = SubResource( 11 )
 nodes/fragment/20/position = Vector2( 80, 0 )
-nodes/fragment/21/node = SubResource( 19 )
+nodes/fragment/21/node = SubResource( 12 )
 nodes/fragment/21/position = Vector2( 280, 0 )
 nodes/fragment/connections = PoolIntArray( 2, 0, 3, 0, 3, 0, 4, 0, 4, 0, 5, 0, 6, 0, 12, 0, 12, 0, 13, 0, 5, 0, 13, 1, 13, 0, 14, 0, 12, 1, 15, 0, 4, 0, 15, 1, 15, 0, 14, 1, 14, 0, 10, 0, 10, 0, 0, 8, 16, 0, 0, 0, 17, 0, 0, 2, 18, 0, 0, 4, 19, 0, 0, 3, 20, 0, 21, 0, 21, 0, 3, 1, 21, 0, 4, 1 )
