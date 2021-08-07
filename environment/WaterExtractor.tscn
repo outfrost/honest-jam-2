@@ -57,15 +57,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
 [node name="supports_high12" parent="supports_high4" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0 )
 
-[node name="machine_generatorLarge" parent="." instance=ExtResource( 5 )]
-transform = Transform( -2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, 2.125, 0.45, 0.5 )
-
-[node name="pipe_cornerRound" parent="machine_generatorLarge" instance=ExtResource( 4 )]
-transform = Transform( -2.18557e-08, -0.5, -2.18557e-08, 0, -2.18557e-08, 0.5, -0.5, 2.18557e-08, 9.55343e-16, 2.15, -0.4, 1.75 )
-
-[node name="pipe_straight" parent="machine_generatorLarge" instance=ExtResource( 3 )]
-transform = Transform( 9.55343e-16, -0.5, 0, 0.5, 1.77636e-15, -2.18557e-08, 2.18557e-08, 0, 0.5, 2.15, -0.65, 0.5 )
-
 [node name="machine_generatorLarge2" parent="." instance=ExtResource( 5 )]
 transform = Transform( -2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, 2.125, 0.45, 0.15 )
 
@@ -75,6 +66,15 @@ transform = Transform( -2.18557e-08, -0.5, -2.18557e-08, 0, -2.18557e-08, 0.5, -
 [node name="pipe_straight" parent="machine_generatorLarge2" instance=ExtResource( 3 )]
 transform = Transform( 9.55343e-16, -0.5, 0, 0.5, 1.77636e-15, -2.18557e-08, 2.18557e-08, 0, 0.5, 2.15, -0.65, 0.5 )
 
+[node name="pipe_straight2" parent="machine_generatorLarge2" instance=ExtResource( 3 )]
+transform = Transform( -2.18557e-08, -0.5, -2.18557e-08, 5.32907e-15, -2.18557e-08, 0.5, -0.5, 2.18557e-08, 6.28441e-15, 2.15, -0.9, 1.75 )
+
+[node name="pipe_straight3" parent="machine_generatorLarge2" instance=ExtResource( 3 )]
+transform = Transform( -2.18557e-08, -0.5, -2.18557e-08, 5.32907e-15, -2.18557e-08, 0.5, -0.5, 2.18557e-08, 6.28441e-15, 2.15, -1.4, 1.75 )
+
+[node name="pipe_straight4" parent="machine_generatorLarge2" instance=ExtResource( 3 )]
+transform = Transform( -2.18557e-08, -0.5, -2.18557e-08, 5.32907e-15, -2.18557e-08, 0.5, -0.5, 2.18557e-08, 6.28441e-15, 2.15, -1.9, 1.75 )
+
 [node name="machine_generatorLarge3" parent="." instance=ExtResource( 5 )]
 transform = Transform( -2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, 2.125, 0.45, -0.2 )
 
@@ -83,6 +83,33 @@ transform = Transform( -2.18557e-08, -0.5, -2.18557e-08, 0, -2.18557e-08, 0.5, -
 
 [node name="pipe_straight" parent="machine_generatorLarge3" instance=ExtResource( 3 )]
 transform = Transform( 9.55343e-16, -0.5, 0, 0.5, 1.77636e-15, -2.18557e-08, 2.18557e-08, 0, 0.5, 2.15, -0.65, 0.5 )
+
+[node name="pipe_straight2" parent="machine_generatorLarge3" instance=ExtResource( 3 )]
+transform = Transform( -2.18557e-08, -0.5, -2.18557e-08, 5.32907e-15, -2.18557e-08, 0.5, -0.5, 2.18557e-08, 6.28441e-15, 2.15, -0.9, 1.75 )
+
+[node name="pipe_straight3" parent="machine_generatorLarge3" instance=ExtResource( 3 )]
+transform = Transform( -2.18557e-08, -0.5, -2.18557e-08, 5.32907e-15, -2.18557e-08, 0.5, -0.5, 2.18557e-08, 6.28441e-15, 2.15, -1.4, 1.75 )
+
+[node name="pipe_straight4" parent="machine_generatorLarge3" instance=ExtResource( 3 )]
+transform = Transform( -2.18557e-08, -0.5, -2.18557e-08, 5.32907e-15, -2.18557e-08, 0.5, -0.5, 2.18557e-08, 6.28441e-15, 2.15, -1.9, 1.75 )
+
+[node name="machine_generatorLarge4" parent="." instance=ExtResource( 5 )]
+transform = Transform( -2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, 2.125, 0.45, 0.5 )
+
+[node name="pipe_cornerRound" parent="machine_generatorLarge4" instance=ExtResource( 4 )]
+transform = Transform( -2.18557e-08, -0.5, -2.18557e-08, 0, -2.18557e-08, 0.5, -0.5, 2.18557e-08, 9.55343e-16, 2.15, -0.4, 1.75 )
+
+[node name="pipe_straight" parent="machine_generatorLarge4" instance=ExtResource( 3 )]
+transform = Transform( 9.55343e-16, -0.5, 0, 0.5, 1.77636e-15, -2.18557e-08, 2.18557e-08, 0, 0.5, 2.15, -0.65, 0.5 )
+
+[node name="pipe_straight2" parent="machine_generatorLarge4" instance=ExtResource( 3 )]
+transform = Transform( -2.18557e-08, -0.5, -2.18557e-08, 5.32907e-15, -2.18557e-08, 0.5, -0.5, 2.18557e-08, 6.28441e-15, 2.15, -0.9, 1.75 )
+
+[node name="pipe_straight3" parent="machine_generatorLarge4" instance=ExtResource( 3 )]
+transform = Transform( -2.18557e-08, -0.5, -2.18557e-08, 5.32907e-15, -2.18557e-08, 0.5, -0.5, 2.18557e-08, 6.28441e-15, 2.15, -1.4, 1.75 )
+
+[node name="pipe_straight4" parent="machine_generatorLarge4" instance=ExtResource( 3 )]
+transform = Transform( -2.18557e-08, -0.5, -2.18557e-08, 5.32907e-15, -2.18557e-08, 0.5, -0.5, 2.18557e-08, 6.28441e-15, 2.15, -1.9, 1.75 )
 
 [node name="pipe_cornerRound" parent="." instance=ExtResource( 4 )]
 transform = Transform( -1.31134e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.31134e-08, 0.925, 0.507, 1.06 )
