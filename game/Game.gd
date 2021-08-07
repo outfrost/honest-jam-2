@@ -10,10 +10,12 @@ onready var music_player: AudioStreamPlayer = $MusicPlayer
 onready var main_menu: Control = $UI/MainMenu
 onready var transition_screen: TransitionScreen = $UI/TransitionScreen
 onready var level_container: Node = $LevelContainer
+onready var camera: Camera = $Camera
 
 var debug: Reference
 
 var fadeMusicIn: bool = false
+var selected_building: Spatial = null
 
 func _ready() -> void:
 	if OS.has_feature("debug"):
@@ -25,6 +27,7 @@ func _ready() -> void:
 	main_menu.connect("start_game", self, "on_start_game")
 
 	AudioServer.set_bus_volume_db(0, linear2db(0.5))
+	selected_building = preload("res://object/MineralExtractor.tscn").instance()
 
 func _process(delta: float) -> void:
 	DebugOverlay.display("fps %d" % Performance.get_monitor(Performance.TIME_FPS))

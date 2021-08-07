@@ -55,4 +55,10 @@ disabled = true
 
 [node name="LabelGizmo" parent="Visualisation" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.25, 1 )
-text = ""
+text = "BLANK"
+
+[node name="ClickArea" type="Area" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="ClickArea"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.25, 1 )
+shape = SubResource( 1 )

@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://game/ui-theme/ui_theme.tres" type="Theme" id=1]
+
+[node name="ConstructionUi" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelToggleButton" type="Button" parent="."]
+anchor_left = 1.0
+anchor_top = 0.55
+anchor_right = 1.0
+anchor_bottom = 0.55
+margin_left = -48.0
+margin_top = -16.0
+margin_right = -16.0
+margin_bottom = 16.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "B"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PopupPanel" type="PopupPanel" parent="."]
+visible = true
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -320.0
+margin_top = -192.0
+margin_right = -64.0
+margin_bottom = 192.0
+grow_horizontal = 0
+grow_vertical = 2

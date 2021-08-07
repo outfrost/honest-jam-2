@@ -19,6 +19,8 @@ enum Dir {
 
 export(Type) var type = Type.BLANK
 
+onready var game: Game = find_parent("Game")
+
 var link = {
 	Dir.NORTH: null,
 	Dir.EAST: null,
@@ -46,7 +48,7 @@ func _ready() -> void:
 			var result = space_state.intersect_ray(
 				from,
 				from + Vector3(0.0, -40.0, 0.0),
-				[],
+				[$ClickArea],
 				~0,
 				false,
 				true)
@@ -58,9 +60,25 @@ func _ready() -> void:
 			parent.remove_child(collider)
 			collider.queue_free()
 
-	for _node in terrain:
-		var node: Spatial = _node
-		node.hide()
+#	for _node in terrain:
+#		var node: Spatial = _node
+#		node.hide()
+
+	$ClickArea.connect("mouse_entered", self, "hover")
+	$ClickArea.connect("mouse_exited", self, "unhover")
+
+func _process(delta: float) -> void:
+	pass
+
+func hover() -> void:
+	print("YEET")
+	if game.selected_building.get_parent():
+		game.selected_building.get_parent().remove_child(game.selected_building)
+	add_child(game.selected_building)
+
+func unhover() -> void:
+	if game.selected_building.get_parent() == self:
+		remove_child(game.selected_building)
 
 static func type_str(type) -> String:
 	return Type.keys()[type]

@@ -16,7 +16,7 @@ stream = ExtResource( 6 )
 bus = "Music"
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 0.707107, -0.454519, 0.541675, 0, 0.766045, 0.642787, -0.707107, -0.454519, 0.541675, 8, 7, 0 )
+transform = Transform( 0.707107, -0.454519, 0.541676, 0, 0.766045, 0.642787, -0.707107, -0.454519, 0.541676, 8, 5, -4 )
 current = true
 far = 500.0
 
