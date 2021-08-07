@@ -11,7 +11,7 @@
 [ext_resource path="res://asset/kenney/spacekit2/craft_miner.glb" type="PackedScene" id=9]
 [ext_resource path="res://asset/kenney/spacekit2/chimney_detailed.glb" type="PackedScene" id=10]
 
-[node name="Spatial" type="Spatial"]
+[node name="OreExtractor" type="Spatial"]
 
 [node name="machine_generatorLarge" parent="." instance=ExtResource( 5 )]
 transform = Transform( -1.09278e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.09278e-08, 1.825, 0.25, 0.5 )

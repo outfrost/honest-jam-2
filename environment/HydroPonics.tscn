@@ -13,7 +13,7 @@
 [ext_resource path="res://asset/kenney/spacekit2/machine_barrel.glb" type="PackedScene" id=11]
 [ext_resource path="res://asset/kenney/spacekit2/corridor_end.glb" type="PackedScene" id=12]
 
-[node name="Spatial" type="Spatial"]
+[node name="HydroPonics" type="Spatial"]
 
 [node name="corridor_split" parent="." instance=ExtResource( 2 )]
 transform = Transform( 0.25, 0, -2.98023e-08, 0, 0.25, 0, 2.98023e-08, 0, 0.25, -0.125, 0, -1 )
