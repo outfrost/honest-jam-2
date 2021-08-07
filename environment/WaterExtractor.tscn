@@ -1,0 +1,115 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://asset/kenney/spacekit2/platform_cornerOpen.glb" type="PackedScene" id=1]
+[ext_resource path="res://asset/kenney/spacekit2/supports_high.glb" type="PackedScene" id=2]
+[ext_resource path="res://asset/kenney/spacekit2/pipe_straight.glb" type="PackedScene" id=3]
+[ext_resource path="res://asset/kenney/spacekit2/pipe_cornerRound.glb" type="PackedScene" id=4]
+[ext_resource path="res://asset/kenney/spacekit2/machine_generatorLarge.glb" type="PackedScene" id=5]
+[ext_resource path="res://asset/kenney/spacekit2/hangar_roundB.glb" type="PackedScene" id=6]
+
+[node name="Spatial" type="Spatial"]
+
+[node name="platform_cornerOpen" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -0.05, 0 )
+
+[node name="platform_cornerOpen2" parent="." instance=ExtResource( 1 )]
+transform = Transform( 2.98023e-08, 0, 1, 0, 1, 0, -1, 0, 2.98023e-08, 0, -0.05, 2.5 )
+
+[node name="platform_cornerOpen3" parent="." instance=ExtResource( 1 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.5, -0.05, 2 )
+
+[node name="platform_cornerOpen4" parent="." instance=ExtResource( 1 )]
+transform = Transform( 5.76205e-08, 0, -1, 0, 1, 0, 1, 0, 5.76205e-08, 2, -0.05, -0.5 )
+
+[node name="supports_high" parent="." instance=ExtResource( 2 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.5, -0.5, 0.75 )
+
+[node name="supports_high5" parent="supports_high" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+
+[node name="supports_high9" parent="supports_high" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0 )
+
+[node name="supports_high2" parent="." instance=ExtResource( 2 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.5, -0.5, -0.25 )
+
+[node name="supports_high6" parent="supports_high2" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+
+[node name="supports_high10" parent="supports_high2" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0 )
+
+[node name="supports_high3" parent="." instance=ExtResource( 2 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.5, -0.5, 0.75 )
+
+[node name="supports_high7" parent="supports_high3" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+
+[node name="supports_high11" parent="supports_high3" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0 )
+
+[node name="supports_high4" parent="." instance=ExtResource( 2 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.5, -0.5, -0.25 )
+
+[node name="supports_high8" parent="supports_high4" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+
+[node name="supports_high12" parent="supports_high4" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0 )
+
+[node name="machine_generatorLarge" parent="." instance=ExtResource( 5 )]
+transform = Transform( -2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, 2.125, -0.05, 0.5 )
+
+[node name="pipe_cornerRound" parent="machine_generatorLarge" instance=ExtResource( 4 )]
+transform = Transform( -2.18557e-08, -0.5, -2.18557e-08, 0, -2.18557e-08, 0.5, -0.5, 2.18557e-08, 9.55343e-16, 2.15, -0.4, 1.75 )
+
+[node name="pipe_straight" parent="machine_generatorLarge" instance=ExtResource( 3 )]
+transform = Transform( 9.55343e-16, -0.5, 0, 0.5, 1.77636e-15, -2.18557e-08, 2.18557e-08, 0, 0.5, 2.15, -0.65, 0.5 )
+
+[node name="machine_generatorLarge2" parent="." instance=ExtResource( 5 )]
+transform = Transform( -2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, 2.125, -0.05, 0.15 )
+
+[node name="pipe_cornerRound" parent="machine_generatorLarge2" instance=ExtResource( 4 )]
+transform = Transform( -2.18557e-08, -0.5, -2.18557e-08, 0, -2.18557e-08, 0.5, -0.5, 2.18557e-08, 9.55343e-16, 2.15, -0.4, 1.75 )
+
+[node name="pipe_straight" parent="machine_generatorLarge2" instance=ExtResource( 3 )]
+transform = Transform( 9.55343e-16, -0.5, 0, 0.5, 1.77636e-15, -2.18557e-08, 2.18557e-08, 0, 0.5, 2.15, -0.65, 0.5 )
+
+[node name="machine_generatorLarge3" parent="." instance=ExtResource( 5 )]
+transform = Transform( -2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, 2.125, -0.05, -0.2 )
+
+[node name="pipe_cornerRound" parent="machine_generatorLarge3" instance=ExtResource( 4 )]
+transform = Transform( -2.18557e-08, -0.5, -2.18557e-08, 0, -2.18557e-08, 0.5, -0.5, 2.18557e-08, 9.55343e-16, 2.15, -0.4, 1.75 )
+
+[node name="pipe_straight" parent="machine_generatorLarge3" instance=ExtResource( 3 )]
+transform = Transform( 9.55343e-16, -0.5, 0, 0.5, 1.77636e-15, -2.18557e-08, 2.18557e-08, 0, 0.5, 2.15, -0.65, 0.5 )
+
+[node name="pipe_cornerRound" parent="." instance=ExtResource( 4 )]
+transform = Transform( -1.31134e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.31134e-08, 0.925, 0.007, 1.06 )
+
+[node name="pipe_straight" parent="pipe_cornerRound" instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.5, 0, -0.5 )
+
+[node name="pipe_straight2" parent="pipe_cornerRound" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1 )
+
+[node name="pipe_straight4" parent="pipe_cornerRound" instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3, 0, -2 )
+
+[node name="pipe_straight5" parent="pipe_cornerRound" instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2, 0, -2 )
+
+[node name="pipe_straight6" parent="pipe_cornerRound" instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1, 0, -2 )
+
+[node name="pipe_straight3" parent="pipe_cornerRound" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, -3.55271e-15, 0, 1, 0, 3.55271e-15, 0, 1, 0, 0, -2 )
+
+[node name="pipe_cornerRound" parent="pipe_cornerRound" instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -2 )
+
+[node name="hangar_roundB" parent="." instance=ExtResource( 6 )]
+transform = Transform( 0.25, 0, 0, 0, 0.35, 0, 0, 0, 0.25, 0, 0, 0.2 )
+
+[node name="hangar_roundB2" parent="." instance=ExtResource( 6 )]
+transform = Transform( 0.25, 0, 0, 0, 0.35, 0, 0, 0, 0.25, 0, 0, 1 )
