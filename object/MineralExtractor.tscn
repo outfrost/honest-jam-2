@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://asset/kenney/spacekit2/machine_generatorLarge.glb" type="PackedScene" id=1]
-[ext_resource path="res://environment/craft_cargoB.tscn" type="PackedScene" id=2]
+[ext_resource path="res://object/craft_cargoB.tscn" type="PackedScene" id=2]
 [ext_resource path="res://asset/kenney/spacekit2/machine_barrel.glb" type="PackedScene" id=3]
 [ext_resource path="res://asset/kenney/spacekit2/chimney.glb" type="PackedScene" id=4]
 [ext_resource path="res://asset/kenney/spacekit2/platform_small.glb" type="PackedScene" id=5]
@@ -75,7 +75,6 @@ material/3 = ExtResource( 11 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.19209e-07, 0, 3 )
 
 [node name="hangar_largeB" parent="hangar_largeB/hangar_largeB2/tmpParent" index="0"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 1.5 )
 material/3 = ExtResource( 11 )
 
 [node name="hangar_smallB" parent="hangar_largeB" instance=ExtResource( 8 )]
@@ -88,7 +87,6 @@ material/2 = ExtResource( 11 )
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4, 0, 8.5 )
 
 [node name="hangar_smallB" parent="hangar_largeB/hangar_smallB2/tmpParent" index="0"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 1.5 )
 material/2 = ExtResource( 11 )
 
 [node name="chimney3" parent="hangar_largeB" instance=ExtResource( 4 )]

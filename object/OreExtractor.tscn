@@ -8,7 +8,7 @@
 [ext_resource path="res://asset/kenney/spacekit2/barrels.glb" type="PackedScene" id=6]
 [ext_resource path="res://asset/kenney/spacekit2/hangar_smallB.glb" type="PackedScene" id=7]
 [ext_resource path="res://asset/kenney/spacekit2/platform_small.glb" type="PackedScene" id=8]
-[ext_resource path="res://environment/craft_cargoB.tscn" type="PackedScene" id=9]
+[ext_resource path="res://object/craft_cargoB.tscn" type="PackedScene" id=9]
 [ext_resource path="res://asset/kenney/spacekit2/chimney_detailed.glb" type="PackedScene" id=10]
 
 [node name="OreExtractor" type="Spatial"]
