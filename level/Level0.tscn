@@ -8,7 +8,7 @@
 [ext_resource path="res://environment/spacekit2/terrain_side.tscn" type="PackedScene" id=6]
 [ext_resource path="res://environment/spacekit2/terrain_sideCorner.tscn" type="PackedScene" id=7]
 [ext_resource path="res://environment/spacekit2/terrain_sideCornerInner.tscn" type="PackedScene" id=8]
-[ext_resource path="res://environment/spacekit2/rock_crystals.tscn" type="PackedScene" id=9]
+[ext_resource path="res://environment/rock_Mineral.tscn" type="PackedScene" id=9]
 [ext_resource path="res://level/Level.gd" type="Script" id=10]
 [ext_resource path="res://environment/Water.tscn" type="PackedScene" id=11]
 [ext_resource path="res://level/Level0.lmbake" type="BakedLightmapData" id=12]
@@ -61,7 +61,7 @@ type = 1
 
 [node name="Tile3" parent="Tiles" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.5, -8 )
-type = 2
+type = 4
 
 [node name="Tile36" parent="Tiles" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.5, -6 )
@@ -868,9 +868,6 @@ transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -4, 0, -9
 [node name="terrain_sideCliff48" parent="Terrain" instance=ExtResource( 1 )]
 transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -4, 0, -11 )
 
-[node name="rock_crystals" parent="Terrain" instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.5, -8 )
-
 [node name="terrain_side" parent="Terrain" instance=ExtResource( 6 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8, 0, -10 )
 
@@ -1029,3 +1026,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, -8 )
 
 [node name="Water32" parent="Terrain" instance=ExtResource( 11 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -0.4, -8 )
+
+[node name="Rocks" type="Spatial" parent="."]
+
+[node name="rock_Mineral" parent="Rocks" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.5, -8 )
