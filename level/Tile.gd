@@ -5,6 +5,9 @@ enum Type {
 	BLANK,
 	BUILD,
 	OBSTACLE,
+	WATER,
+	MINERAL,
+	ORE,
 }
 
 enum Dir {
