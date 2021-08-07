@@ -14,19 +14,19 @@
 [node name="OreExtractor" type="Spatial"]
 
 [node name="machine_generatorLarge" parent="." instance=ExtResource( 5 )]
-transform = Transform( -1.09278e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.09278e-08, 1.825, 0.25, 0.5 )
+transform = Transform( -1.09278e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.09278e-08, 1.825, 0.25, -1.5 )
 
 [node name="barrels" parent="." instance=ExtResource( 6 )]
-transform = Transform( 0.239934, 0, -0.0702253, 0, 0.25, 0, 0.0702253, 0, 0.239934, 0.655696, 0, 0.932133 )
+transform = Transform( 0.239934, 0, -0.0702253, 0, 0.25, 0, 0.0702253, 0, 0.239934, 0.655696, 0, -1.06787 )
 
 [node name="barrels2" parent="." instance=ExtResource( 6 )]
-transform = Transform( 0.178105, 0, -0.175439, 0, 0.25, 0, 0.175439, 0, 0.178105, 1.0934, 0, 0.932133 )
+transform = Transform( 0.178105, 0, -0.175439, 0, 0.25, 0, 0.175439, 0, 0.178105, 1.0934, 0, -1.06787 )
 
 [node name="barrels3" parent="." instance=ExtResource( 6 )]
-transform = Transform( 0.0557019, 0, -0.243716, 0, 0.25, 0, 0.243716, 0, 0.0557019, 1.27293, 0, 1.02709 )
+transform = Transform( 0.0557019, 0, -0.243716, 0, 0.25, 0, 0.243716, 0, 0.0557019, 1.27293, 0, -0.97291 )
 
 [node name="hangar_largeB" parent="." instance=ExtResource( 2 )]
-transform = Transform( -1.09278e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.09278e-08, 2, 0, 0.5 )
+transform = Transform( -1.09278e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.09278e-08, 2, 0, -1.5 )
 
 [node name="hangar_largeB2" parent="hangar_largeB" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.19209e-07, 0, 3 )
@@ -47,19 +47,19 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.19209
 transform = Transform( 2.62268e-07, 0, -2, 0, 2, 0, 2, 0, 2.62268e-07, 5, 1, -2.5 )
 
 [node name="machine_barrelLarge" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.375, 0, -1.125 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.375, 0, -3.125 )
 
 [node name="machine_barrelLarge2" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25, 0, -1.125 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25, 0, -3.125 )
 
 [node name="platform_small2" parent="." instance=ExtResource( 8 )]
-transform = Transform( 0.35, 0, 0, 0, 0.1, 0, 0, 0, 0.35, 0.395, 0, 1 )
+transform = Transform( 0.35, 0, 0, 0, 0.1, 0, 0, 0, 0.35, 0.395, 0, -1 )
 
 [node name="chimney_detailed" parent="." instance=ExtResource( 10 )]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.375, 0, -0.6 )
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.375, 0, -2.6 )
 
 [node name="chimney_detailed2" parent="." instance=ExtResource( 10 )]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.5, 0, -0.6 )
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.5, 0, -2.6 )
 
 [node name="craft_cargoB" parent="." instance=ExtResource( 9 )]
-transform = Transform( -0.167283, 0, -0.185786, 0, 0.25, 0, 0.185786, 0, -0.167283, 1.635, 0, 1.635 )
+transform = Transform( -0.167283, 0, -0.185786, 0, 0.25, 0, 0.185786, 0, -0.167283, 1.635, 0, -0.365 )
