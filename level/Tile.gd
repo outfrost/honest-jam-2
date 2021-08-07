@@ -62,10 +62,8 @@ func _ready() -> void:
 		var node: Spatial = _node
 		node.hide()
 
+static func type_str(type) -> String:
+	return Type.keys()[type]
+
 static func dir_str(dir) -> String:
-	match dir:
-		Dir.NORTH: return "NORTH"
-		Dir.EAST: return "EAST"
-		Dir.SOUTH: return "SOUTH"
-		Dir.WEST: return "WEST"
-		_: return "wat"
+	return Dir.keys()[dir]
