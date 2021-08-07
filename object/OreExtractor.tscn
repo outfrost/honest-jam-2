@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://asset/kenney/spacekit2/machine_generatorLarge.glb" type="PackedScene" id=1]
 [ext_resource path="res://object/craft_cargoB.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://asset/kenney/spacekit2/hangar_largeB.glb" type="PackedScene" id=9]
 [ext_resource path="res://asset/kenney/spacekit2/barrels.glb" type="PackedScene" id=10]
 [ext_resource path="res://asset/metalYellow.material" type="Material" id=11]
+[ext_resource path="res://asset/kenney/spacekit2/dark.material" type="Material" id=12]
 
 [node name="MineralExtractor" type="Spatial"]
 
@@ -116,6 +117,9 @@ material/1 = ExtResource( 11 )
 [node name="platform_small2" parent="." instance=ExtResource( 5 )]
 transform = Transform( 0.303109, 0, -0.175, 0, 0.1, 0, 0.175, 0, 0.303109, 1.4318, 0, 0.93468 )
 
+[node name="platform_small" parent="platform_small2/tmpParent" index="0"]
+material/0 = ExtResource( 12 )
+
 [node name="chimney_detailed" parent="." instance=ExtResource( 7 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.375, 0, -0.6 )
 
@@ -139,4 +143,5 @@ material/3 = ExtResource( 11 )
 [editable path="hangar_largeB/machine_barrel"]
 [editable path="machine_barrelLarge"]
 [editable path="machine_barrelLarge2"]
+[editable path="platform_small2"]
 [editable path="craft_cargoB"]
