@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://game/ui-theme/ui_theme.tres" type="Theme" id=1]
 [ext_resource path="res://level/Level0.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://game/Game.gd" type="Script" id=5]
 [ext_resource path="res://sound/gameplay.ogg" type="AudioStream" id=6]
 [ext_resource path="res://game/construction/ConstructionUi.tscn" type="PackedScene" id=7]
+[ext_resource path="res://game/ResourceView.tscn" type="PackedScene" id=8]
 
 [node name="Game" type="Control"]
 anchor_right = 1.0
@@ -36,6 +37,8 @@ theme = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="ResourceView" parent="UI" instance=ExtResource( 8 )]
 
 [node name="ConstructionUi" parent="UI" instance=ExtResource( 7 )]
 
