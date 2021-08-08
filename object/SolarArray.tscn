@@ -17,6 +17,8 @@ size = Vector3( 0.25, 0.125, 0.125 )
 
 [node name="SolarArray" type="Spatial"]
 script = ExtResource( 4 )
+power_flow = 4
+cost = 2
 
 [node name="machine_wireless" parent="." instance=ExtResource( 1 )]
 transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0.545, 0, 1.1 )

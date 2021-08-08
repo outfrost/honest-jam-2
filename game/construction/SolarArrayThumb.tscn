@@ -14,7 +14,7 @@ texture = ExtResource( 3 )
 text = "Solar Array"
 
 [node name="CostLabel" parent="." index="2"]
-text = "?? Metal"
+text = "2 Metal"
 
 [node name="ResLabel" parent="." index="3"]
-text = "Power +5"
+text = "Power +4"

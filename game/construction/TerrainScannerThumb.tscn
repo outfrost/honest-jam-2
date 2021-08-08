@@ -14,7 +14,8 @@ texture = ExtResource( 3 )
 text = "Terrain Scanner"
 
 [node name="CostLabel" parent="." index="2"]
-text = "?? Metal"
+text = "2 Metal"
 
 [node name="ResLabel" parent="." index="3"]
-text = "Power -2"
+text = "Range 3
+Power -1"

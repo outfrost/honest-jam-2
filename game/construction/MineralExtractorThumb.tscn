@@ -14,8 +14,8 @@ texture = ExtResource( 3 )
 text = "Mineral Extractor"
 
 [node name="CostLabel" parent="." index="2"]
-text = "?? Metal"
+text = "4 Metal"
 
 [node name="ResLabel" parent="." index="3"]
-text = "Minerals +5
-Power -5"
+text = "Minerals +8
+Power -4"

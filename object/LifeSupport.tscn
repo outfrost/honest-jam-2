@@ -13,6 +13,10 @@
 
 [node name="LifeSupport" type="Spatial"]
 script = ExtResource( 10 )
+power_flow = -4
+water_flow = -2
+climate_flow = 3
+cost = 4
 
 [node name="machine_barrelLarge" parent="." instance=ExtResource( 1 )]
 transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0.708717, 0, 1.26959 )

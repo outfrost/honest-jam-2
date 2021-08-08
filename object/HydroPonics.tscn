@@ -17,6 +17,11 @@
 
 [node name="HydroPonics" type="Spatial"]
 script = ExtResource( 14 )
+power_flow = -4
+water_flow = -4
+food_flow = 4
+minerals_flow = -8
+cost = 6
 
 [node name="corridor_split" parent="." instance=ExtResource( 2 )]
 transform = Transform( 0.25, 0, -2.98023e-08, 0, 0.25, 0, 2.98023e-08, 0, 0.25, -0.125, 0, 1 )

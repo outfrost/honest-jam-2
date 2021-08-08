@@ -14,10 +14,10 @@ texture = ExtResource( 3 )
 text = "Hydroponics"
 
 [node name="CostLabel" parent="." index="2"]
-text = "?? Metal"
+text = "6 Metal"
 
 [node name="ResLabel" parent="." index="3"]
-text = "Food +8
-Minerals -4
-Water -6
+text = "Food +4
+Minerals -8
+Water -4
 Power -4"

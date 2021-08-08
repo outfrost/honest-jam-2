@@ -16,8 +16,11 @@
 
 [node name="MineralExtractor" type="Spatial"]
 script = ExtResource( 11 )
+power_flow = -4
+minerals_flow = 8
 requires_neighbour = true
 neighbour = 4
+cost = 4
 
 [node name="machine_generatorLarge" parent="." instance=ExtResource( 5 )]
 transform = Transform( -1.09278e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.09278e-08, 1.825, 0.25, 0.5 )

@@ -14,9 +14,9 @@ texture = ExtResource( 3 )
 text = "Life Support"
 
 [node name="CostLabel" parent="." index="2"]
-text = "?? Metal"
+text = "4 Metal"
 
 [node name="ResLabel" parent="." index="3"]
-text = "Climate +4
+text = "Climate +3
 Water -2
 Power -4"

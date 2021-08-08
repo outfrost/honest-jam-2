@@ -14,8 +14,8 @@ texture = ExtResource( 3 )
 text = "Water Pump"
 
 [node name="CostLabel" parent="." index="2"]
-text = "?? Metal"
+text = "3 Metal"
 
 [node name="ResLabel" parent="." index="3"]
-text = "Water +6
+text = "Water +8
 Power -3"

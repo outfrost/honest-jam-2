@@ -23,15 +23,15 @@ var hovered_tile: Tile = null
 var level = null
 var day = 0
 
-var win_climate:int = 50
-var win_food:int = 50
+var win_climate:int = 100
+var win_food:int = 100
 
 var power: int = 0
 var water: int = 0
-var climate: int = 50
-var food: int = 50
+var climate: int = 5
+var food: int = 5
 var minerals: int = 0
-var metal: int = 0
+var metal: int = 10
 
 var power_flow: int = 0
 var water_flow: int = 0
@@ -172,10 +172,10 @@ func tile_under_mouse(pos: Vector2) -> Tile:
 func reset_stats():
 	power = 0
 	water = 0
-	climate = 0
-	food = 0
+	climate = 5
+	food = 5
 	minerals = 0
-	metal = 0
+	metal = 10
 	day = 0
 
 	power_flow = 0
