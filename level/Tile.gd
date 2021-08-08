@@ -94,6 +94,7 @@ func plop(thing: Spatial):
 		push_error("Cannot plop: there already is a building here (%s)")
 		return
 	building = thing
+	game.metal -= building.cost
 	if thing.get_parent():
 		thing.get_parent().remove_child(thing)
 	apply_mat_override_recursive(null, thing)
@@ -104,6 +105,7 @@ func can_plop(thing: Spatial) -> bool:
 		building
 		|| thing.get("build_on") == null
 		|| thing.build_on != type
+		|| game.metal < thing.cost
 	):
 		return false
 	if !thing.requires_neighbour:

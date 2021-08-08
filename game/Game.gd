@@ -22,14 +22,22 @@ var hovered_tile: Tile = null
 var level = null
 var day = 0
 
+var win_climate:int = 500
+var win_food:int = 500
+
 var power: int = 0
 var water: int = 0
 var climate: int = 0
-var win_climate:int = 500
 var food: int = 0
-var win_food:int = 500
 var minerals: int = 0
 var metal: int = 0
+
+var power_flow: int = 0
+var water_flow: int = 0
+var climate_flow: int = 0
+var food_flow: int = 0
+var minerals_flow: int = 0
+var metal_flow: int = 0
 
 func _ready() -> void:
 	if OS.has_feature("debug"):
@@ -82,7 +90,15 @@ func _gui_input(event: InputEvent) -> void:
 		if tile:
 			if tile.can_plop(selected_building):
 				tile.plop(selected_building)
+				if selected_building.get("power_flow") != null:
+					power_flow += selected_building.power_flow
+					water_flow += selected_building.water_flow
+					climate_flow += selected_building.climate_flow
+					food_flow += selected_building.food_flow
+					minerals_flow += selected_building.minerals_flow
+					metal_flow += selected_building.metal_flow
 				selected_building = null
+				$UI/ResourceView.update_resources()
 			get_tree().set_input_as_handled()
 
 func on_start_game() -> void:
@@ -133,6 +149,14 @@ func reset_stats():
 	minerals = 0
 	metal = 0
 	day = 0
+
+	power_flow = 0
+	water_flow = 0
+	climate_flow = 0
+	food_flow = 0
+	minerals_flow = 0
+	metal_flow = 0
+
 	$UI/ResourceView.update_resources()
 
 func update_resources():
@@ -145,6 +169,7 @@ func update_resources():
 				food += level.tilemap[x][z].building.food_flow
 				minerals += level.tilemap[x][z].building.minerals_flow
 				metal += level.tilemap[x][z].building.metal_flow
+	$UI/ResourceView.update_resources()
 
 func game_lost():
 	pass
@@ -156,5 +181,8 @@ func advance_day():
 	update_resources()
 	if power < 0 || water < 0 || climate < 0 || food < 0 || minerals < 0 || metal < 0:
 		game_lost()
-	if day == day_limt && climate >= win_climate && food >= win_food:
-		game_won()
+	if day == day_limt:
+		if climate >= win_climate && food >= win_food:
+			game_won()
+		else:
+			game_lost()
