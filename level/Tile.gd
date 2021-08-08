@@ -111,7 +111,7 @@ func plop(thing: Spatial):
 	discover_neighbours()
 	if building.name == "TerrainScanner":
 		if link[Dir.NORTH]:
-			discover_neighbours(2)
+			discover_neighbours(1)
 
 func discover_neighbours(depth: int = 0) -> void:
 	if depth == 0:

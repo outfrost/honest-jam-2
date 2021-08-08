@@ -17,5 +17,5 @@ text = "Terrain Scanner"
 text = "2 Metal"
 
 [node name="ResLabel" parent="." index="3"]
-text = "Range 3
+text = "Range 2
 Power -1"

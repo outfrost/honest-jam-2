@@ -26,12 +26,12 @@ var day = 0
 var win_climate:int = 100
 var win_food:int = 100
 
-var power: int = 0
+var power: int = 10
 var water: int = 0
 var climate: int = 5
 var food: int = 5
 var minerals: int = 0
-var metal: int = 10
+var metal: int = 15
 
 var power_flow: int = 0
 var water_flow: int = 0
@@ -170,7 +170,7 @@ func tile_under_mouse(pos: Vector2) -> Tile:
 	return null
 
 func reset_stats():
-	power = 0
+	power = 10
 	water = 0
 	climate = 5
 	food = 5
