@@ -49,24 +49,23 @@ func _process(delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
-		var from = camera.project_ray_origin(event.position)
-		var to = from + camera.project_ray_normal(event.position) * camera.far
-		var space_state = get_tree().root.world.direct_space_state
-		var result = space_state.intersect_ray(
-			from,
-			to,
-			[],
-			~0,
-			false,
-			true)
-		if result.has("collider") && result["collider"].get_parent() is Tile:
-			var tile: Tile = result["collider"].get_parent()
+		var tile: Tile = tile_under_mouse(event.position)
+		if tile:
 			if tile != hovered_tile:
 				tile.hover()
 				hovered_tile = tile
 		elif hovered_tile:
 			hovered_tile.unhover()
 			hovered_tile = null
+	elif (
+		event is InputEventMouseButton
+		&& event.button_index == BUTTON_LEFT
+		&& !event.pressed
+	):
+		var tile: Tile = tile_under_mouse(event.position)
+		if tile:
+			print("YEET")
+			get_tree().set_input_as_handled()
 
 func on_start_game() -> void:
 	transition_screen.fade_in()
@@ -90,3 +89,18 @@ func back_to_menu() -> void:
 	music_player.stop()
 	main_menu.show()
 	transition_screen.fade_out()
+
+func tile_under_mouse(pos: Vector2) -> Tile:
+	var from = camera.project_ray_origin(pos)
+	var to = from + camera.project_ray_normal(pos) * camera.far
+	var space_state = get_tree().root.world.direct_space_state
+	var result = space_state.intersect_ray(
+		from,
+		to,
+		[],
+		~0,
+		false,
+		true)
+	if result.has("collider") && result["collider"].get_parent() is Tile:
+		return result["collider"].get_parent()
+	return null
