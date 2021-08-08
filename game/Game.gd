@@ -22,14 +22,14 @@ var hovered_tile: Tile = null
 var level = null
 var day = 0
 
-var power_flow: int = 0
-var water_flow: int = 0
-var climate_flow: int = 0
-var win_climate_flow:int = 500
-var food_flow: int = 0
-var win_food_flow:int = 500
-var minerals_flow: int = 0
-var metal_flow: int = 0
+var power: int = 0
+var water: int = 0
+var climate: int = 0
+var win_climate:int = 500
+var food: int = 0
+var win_food:int = 500
+var minerals: int = 0
+var metal: int = 0
 
 func _ready() -> void:
 	if OS.has_feature("debug"):
@@ -105,13 +105,7 @@ func back_to_menu() -> void:
 		level_container.remove_child(node)
 		node.queue_free()
 	level = null
-	power_flow = 0
-	water_flow = 0
-	climate_flow = 0
-	food_flow = 0
-	minerals_flow = 0
-	metal_flow = 0
-	day = 0
+	reset_stats()
 	music_player.stop()
 	main_menu.show()
 	transition_screen.fade_out()
@@ -131,46 +125,36 @@ func tile_under_mouse(pos: Vector2) -> Tile:
 		return result["collider"].get_parent()
 	return null
 
-func update_resources():
-	var start_power_flow:int = power_flow
-	var start_water_flow:int = water_flow
-	var start_climate_flow:int = climate_flow
-	var start_food_flow:int = food_flow
-	var start_minerals_flow:int = minerals_flow
-	var start_metal_flow:int = minerals_flow
+func reset_stats():
+	power = 0
+	water = 0
+	climate = 0
+	food = 0
+	minerals = 0
+	metal = 0
+	day = 0
+	$UI/ResourceView.update_resources()
 
+func update_resources():
 	for x in level.tilemap:
 		for z in level.tilemap:
 			if level.tilemap[x][z].building:
-				power_flow += level.tilemap[x][z].building.power_flow
-				water_flow += level.tilemap[x][z].building.water_flow
-				climate_flow += level.tilemap[x][z].building.climate_flow
-				food_flow += level.tilemap[x][z].building.food_flow
-				minerals_flow += level.tilemap[x][z].building.minerals_flow
-				metal_flow += level.tilemap[x][z].building.metal_flow
-
-	var power_flow_diff:int = power_flow - start_power_flow
-	var water_flow_diff:int = water_flow - start_water_flow
-	var clmiate_flow_diff:int = climate_flow - start_climate_flow
-	var food_flow_diff:int = food_flow - start_food_flow
-	var minerals_flow_diff:int = minerals_flow - start_minerals_flow
-	var metal_flow_diff:int = metal_flow - start_metal_flow
-
-	return null
+				power += level.tilemap[x][z].building.power_flow
+				water += level.tilemap[x][z].building.water_flow
+				climate += level.tilemap[x][z].building.climate_flow
+				food += level.tilemap[x][z].building.food_flow
+				minerals += level.tilemap[x][z].building.minerals_flow
+				metal += level.tilemap[x][z].building.metal_flow
 
 func game_lost():
-
-	return null
+	pass
 
 func game_won():
-
-	return null
+	pass
 
 func advance_day():
-
 	update_resources()
-	if power_flow < 0 || water_flow < 0 || climate_flow < 0 || food_flow < 0 || minerals_flow < 0 || metal_flow < 0:
+	if power < 0 || water < 0 || climate < 0 || food < 0 || minerals < 0 || metal < 0:
 		game_lost()
-	if day == day_limt && climate_flow >= win_climate_flow && food_flow >= win_food_flow:
+	if day == day_limt && climate >= win_climate && food >= win_food:
 		game_won()
-	return null
