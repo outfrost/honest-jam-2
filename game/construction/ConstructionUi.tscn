@@ -31,6 +31,7 @@ margin_right = -16.0
 margin_bottom = 16.0
 grow_horizontal = 0
 grow_vertical = 2
+focus_mode = 0
 text = "B"
 __meta__ = {
 "_edit_use_anchors_": false

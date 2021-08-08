@@ -22,13 +22,13 @@ var hovered_tile: Tile = null
 var level = null
 var day = 0
 
-var win_climate:int = 500
-var win_food:int = 500
+var win_climate:int = 50
+var win_food:int = 50
 
 var power: int = 0
 var water: int = 0
-var climate: int = 0
-var food: int = 0
+var climate: int = 50
+var food: int = 50
 var minerals: int = 0
 var metal: int = 0
 
@@ -47,6 +47,7 @@ func _ready() -> void:
 			debug.startup()
 
 	main_menu.connect("start_game", self, "on_start_game")
+	$UI/NextDayButton.connect("pressed", self, "advance_day")
 
 	AudioServer.set_bus_volume_db(0, linear2db(0.5))
 
@@ -56,6 +57,9 @@ func _process(delta: float) -> void:
 
 	if Input.is_action_just_pressed("menu"):
 		back_to_menu()
+
+	if level && Input.is_action_just_pressed("next_day"):
+		advance_day()
 
 	var volDelta: float
 	if fadeMusicIn:
@@ -75,7 +79,7 @@ func _input(event: InputEvent) -> void:
 			if tile != hovered_tile:
 				tile.hover()
 				hovered_tile = tile
-		elif hovered_tile:
+		elif hovered_tile && is_instance_valid(hovered_tile):
 			hovered_tile.unhover()
 			hovered_tile = null
 
@@ -111,12 +115,24 @@ func on_start_game() -> void:
 	music_player.volume_db = linear2db(0.0)
 	music_player.play()
 	fadeMusicIn = true
+	$UI/MessagePopup.set_text((
+		"[center]Congratulations on your successful landing\n"
+		+ "on the surface of Wolf 1061c.\n\n"
+		+ "Your task now is to make sure the lander crew "
+		+ "survives at least %d days, and establishes "
+		+ "a base of operations for the incoming settlers "
+		+ "with at least %d Climate and %d Food.\n\n"
+		+ "Good luck![/center]"
+	) % [day_limt, win_climate, win_food])
+	$UI/MessagePopup.show()
+#	yield($UI/MessagePopup, "dismissed")
 	transition_screen.fade_out()
 
 func back_to_menu() -> void:
 	fadeMusicIn = false
 	transition_screen.fade_in()
 	yield(transition_screen, "animation_finished")
+	$UI/MessagePopup.hide()
 	var nodes = level_container.get_children()
 	for node in nodes:
 		level_container.remove_child(node)
@@ -162,7 +178,7 @@ func reset_stats():
 
 func update_resources():
 	for x in level.tilemap:
-		for z in level.tilemap:
+		for z in level.tilemap[x]:
 			if level.tilemap[x][z].building:
 				power += level.tilemap[x][z].building.power_flow
 				water += level.tilemap[x][z].building.water_flow
@@ -173,10 +189,27 @@ func update_resources():
 	$UI/ResourceView.update_resources()
 
 func game_lost():
-	pass
+	$UI/MessagePopup.set_text(
+		"[center]Unfortunately, "
+		+ "it seems you were not able to sustain a base of operations.\n\n"
+		+ "The settlers will face harsh conditions and a lack of resources.\n\n"
+		+ "Good luck next time.[/center]"
+	)
+	$UI/MessagePopup.show()
+	yield($UI/MessagePopup, "dismissed")
+	back_to_menu()
 
 func game_won():
-	pass
+	$UI/MessagePopup.set_text(
+		"[center]Great work!\n\n "
+		+ "Your base is ready to accept the settlers, who are now descending "
+		+ "for a touchdown.\n"
+		+ "The future of our colony on Wolf 1061c is bright!\n\n"
+		+ "Thank you for your service.[/center]"
+	)
+	$UI/MessagePopup.show()
+	yield($UI/MessagePopup, "dismissed")
+	back_to_menu()
 
 func advance_day():
 	day += 1
