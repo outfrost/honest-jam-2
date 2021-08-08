@@ -1,5 +1,5 @@
 class_name Game
-extends Node
+extends Control
 
 const MUSIC_FADEIN_DURATION: float = 4.0
 const MUSIC_FADEOUT_DURATION: float = 1.0
@@ -57,14 +57,19 @@ func _input(event: InputEvent) -> void:
 		elif hovered_tile:
 			hovered_tile.unhover()
 			hovered_tile = null
-	elif (
+
+func _gui_input(event: InputEvent) -> void:
+	if (
 		event is InputEventMouseButton
 		&& event.button_index == BUTTON_LEFT
-		&& !event.pressed
+		&& event.pressed
 	):
-		var tile: Tile = tile_under_mouse(event.position)
+		var pos: Vector2 = event.position
+		var tile: Tile = tile_under_mouse(pos)
 		if tile:
-			print("YEET")
+			if tile.can_plop(selected_building):
+				tile.plop(selected_building)
+				selected_building = null
 			get_tree().set_input_as_handled()
 
 func on_start_game() -> void:
