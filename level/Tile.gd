@@ -19,7 +19,7 @@ enum Dir {
 
 export(Type) var type = Type.BLANK
 
-onready var game: Game = find_parent("Game")
+onready var game: Node = find_parent("Game")
 
 var link = {
 	Dir.NORTH: null,
@@ -64,14 +64,10 @@ func _ready() -> void:
 #		var node: Spatial = _node
 #		node.hide()
 
-	$ClickArea.connect("mouse_entered", self, "hover")
-	$ClickArea.connect("mouse_exited", self, "unhover")
-
 func _process(delta: float) -> void:
 	pass
 
 func hover() -> void:
-	print("YEET")
 	if game.selected_building.get_parent():
 		game.selected_building.get_parent().remove_child(game.selected_building)
 	add_child(game.selected_building)

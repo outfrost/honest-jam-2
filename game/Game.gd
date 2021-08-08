@@ -16,6 +16,7 @@ var debug: Reference
 
 var fadeMusicIn: bool = false
 var selected_building: Spatial = null
+var hovered_tile: Tile = null
 
 func _ready() -> void:
 	if OS.has_feature("debug"):
@@ -45,6 +46,27 @@ func _process(delta: float) -> void:
 	linearVol += volDelta
 	linearVol = clamp(linearVol, 0.0, 1.0)
 	music_player.volume_db = linear2db(linearVol)
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseMotion:
+		var from = camera.project_ray_origin(event.position)
+		var to = from + camera.project_ray_normal(event.position) * camera.far
+		var space_state = get_tree().root.world.direct_space_state
+		var result = space_state.intersect_ray(
+			from,
+			to,
+			[],
+			~0,
+			false,
+			true)
+		if result.has("collider") && result["collider"].get_parent() is Tile:
+			var tile: Tile = result["collider"].get_parent()
+			if tile != hovered_tile:
+				tile.hover()
+				hovered_tile = tile
+		elif hovered_tile:
+			hovered_tile.unhover()
+			hovered_tile = null
 
 func on_start_game() -> void:
 	transition_screen.fade_in()
