@@ -285,7 +285,7 @@ type = 2
 
 [node name="Tile25" parent="Tiles" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -0.5, -10 )
-type = 1
+type = 3
 
 [node name="Terrain" type="Spatial" parent="."]
 

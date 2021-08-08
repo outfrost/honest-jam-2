@@ -16,6 +16,8 @@
 
 [node name="OreExtractor" type="Spatial"]
 script = ExtResource( 13 )
+requires_neighbour = true
+neighbour = 5
 
 [node name="machine_generatorLarge" parent="." instance=ExtResource( 1 )]
 transform = Transform( -1.09278e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.09278e-08, 1.825, 0.25, 0.5 )
