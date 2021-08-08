@@ -17,6 +17,9 @@ enum Dir {
 	WEST,
 }
 
+const PLOP_ALLOWED_MATERIAL: Material = preload("res://asset/plop_allowed.tres")
+const PLOP_FORBIDDEN_MATERIAL: Material = preload("res://asset/plop_forbidden.tres")
+
 export(Type) var type = Type.BLANK
 
 onready var game: Node = find_parent("Game")
@@ -29,6 +32,7 @@ var link = {
 }
 
 var terrain = []
+var building: Spatial = null
 
 func _ready() -> void:
 	var vis = $Visualisation
@@ -71,10 +75,24 @@ func hover() -> void:
 	if game.selected_building.get_parent():
 		game.selected_building.get_parent().remove_child(game.selected_building)
 	add_child(game.selected_building)
+	if can_plop(game.selected_building):
+		apply_mat_override_recursive(PLOP_ALLOWED_MATERIAL, game.selected_building)
+	else:
+		apply_mat_override_recursive(PLOP_FORBIDDEN_MATERIAL, game.selected_building)
 
 func unhover() -> void:
 	if game.selected_building.get_parent() == self:
+		apply_mat_override_recursive(null, game.selected_building)
 		remove_child(game.selected_building)
+
+func can_plop(thing: Spatial) -> bool:
+	return !building && type in [Type.BUILD]
+
+func apply_mat_override_recursive(mat: Material, node: Node):
+	if node is MeshInstance:
+		node.material_override = mat
+	for child in node.get_children():
+		apply_mat_override_recursive(mat, child)
 
 static func type_str(type) -> String:
 	return Type.keys()[type]
