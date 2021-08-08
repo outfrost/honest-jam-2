@@ -13,6 +13,7 @@ onready var main_menu: Control = $UI/MainMenu
 onready var transition_screen: TransitionScreen = $UI/TransitionScreen
 onready var level_container: Node = $LevelContainer
 onready var camera: Camera = $Camera
+onready var camera_default_pos: Vector3 = camera.transform.origin
 
 var debug: Reference
 
@@ -61,6 +62,15 @@ func _process(delta: float) -> void:
 	if level && Input.is_action_just_pressed("next_day"):
 		advance_day()
 
+	if level:
+		var camera_move = Vector3.ZERO
+		camera_move.x += Input.get_action_strength("move_right")
+		camera_move.x -= Input.get_action_strength("move_left")
+		camera_move.z += Input.get_action_strength("move_down")
+		camera_move.z -= Input.get_action_strength("move_up")
+		camera_move = camera_move.rotated(Vector3.UP, TAU * 0.125)
+		camera.global_translate(camera_move * delta * 3.0)
+	var i: Transform
 	var volDelta: float
 	if fadeMusicIn:
 		volDelta = delta / MUSIC_FADEIN_DURATION
@@ -114,6 +124,7 @@ func on_start_game() -> void:
 	level_container.add_child(level)
 	music_player.volume_db = linear2db(0.0)
 	music_player.play()
+	camera.transform.origin = camera_default_pos
 	fadeMusicIn = true
 	$UI/MessagePopup.set_text((
 		"[center]Congratulations on your successful landing\n"
