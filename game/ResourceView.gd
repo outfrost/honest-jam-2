@@ -3,6 +3,7 @@ extends Control
 onready var game = find_parent("Game")
 
 func update_resources():
+	$DayLabel.text = "Day: %d" % game.day
 	$Panel/HBoxContainer/PowerLabel.text = "Power: %d (%+d)" % [game.power, game.power_flow]
 	$Panel/HBoxContainer/ClimateLabel.text = "Climate: %d (%+d)" % [game.climate, game.climate_flow]
 	$Panel/HBoxContainer/FoodLabel.text = "Food: %d (%+d)" % [game.food, game.food_flow]

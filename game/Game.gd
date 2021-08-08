@@ -51,7 +51,8 @@ func _ready() -> void:
 	AudioServer.set_bus_volume_db(0, linear2db(0.5))
 
 func _process(delta: float) -> void:
-	DebugOverlay.display("fps %d" % Performance.get_monitor(Performance.TIME_FPS))
+	if OS.has_feature("debug"):
+		DebugOverlay.display("fps %d" % Performance.get_monitor(Performance.TIME_FPS))
 
 	if Input.is_action_just_pressed("menu"):
 		back_to_menu()
@@ -178,6 +179,7 @@ func game_won():
 	pass
 
 func advance_day():
+	day += 1
 	update_resources()
 	if power < 0 || water < 0 || climate < 0 || food < 0 || minerals < 0 || metal < 0:
 		game_lost()
