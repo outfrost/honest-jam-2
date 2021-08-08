@@ -1,0 +1,163 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://asset/kenney/spacekit2/machine_barrelLarge.glb" type="PackedScene" id=1]
+[ext_resource path="res://asset/kenney/spacekit2/machine_barrel.glb" type="PackedScene" id=2]
+[ext_resource path="res://asset/kenney/spacekit2/machine_wirelessCable.glb" type="PackedScene" id=3]
+[ext_resource path="res://asset/kenney/spacekit2/hangar_roundGlass.glb" type="PackedScene" id=4]
+[ext_resource path="res://asset/kenney/spacekit2/hangar_smallA.glb" type="PackedScene" id=5]
+[ext_resource path="res://asset/kenney/spacekit2/corridor_cornerRound.glb" type="PackedScene" id=6]
+[ext_resource path="res://asset/kenney/spacekit2/corridor.glb" type="PackedScene" id=7]
+[ext_resource path="res://asset/kenney/spacekit2/hangar_smallB.glb" type="PackedScene" id=8]
+[ext_resource path="res://asset/metalLife.material" type="Material" id=9]
+
+[node name="LifeSupport" type="Spatial"]
+
+[node name="machine_barrelLarge" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0.708717, 0, 1.26959 )
+
+[node name="machine_barrelLarge" parent="machine_barrelLarge/tmpParent" index="0"]
+material/1 = ExtResource( 9 )
+
+[node name="machine_barrel7" parent="." instance=ExtResource( 2 )]
+transform = Transform( -0.25, 0, -2.18557e-08, 0, 0.25, 0, 2.18557e-08, 0, -0.25, 1.80122, 0, 1.65059 )
+
+[node name="machine_barrel" parent="machine_barrel7/tmpParent" index="0"]
+material/1 = ExtResource( 9 )
+
+[node name="machine_barrel2" parent="." instance=ExtResource( 2 )]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0.613717, 0, 0.900591 )
+
+[node name="machine_barrel" parent="machine_barrel2/tmpParent" index="0"]
+material/1 = ExtResource( 9 )
+
+[node name="machine_barrel5" parent="." instance=ExtResource( 2 )]
+transform = Transform( -0.25, 0, -2.18557e-08, 0, 0.25, 0, 2.18557e-08, 0, -0.25, 1.80122, 0, 1.90059 )
+
+[node name="machine_barrel" parent="machine_barrel5/tmpParent" index="0"]
+material/1 = ExtResource( 9 )
+
+[node name="machine_barrel6" parent="." instance=ExtResource( 2 )]
+transform = Transform( -0.25, 0, -2.18557e-08, 0, 0.25, 0, 2.18557e-08, 0, -0.25, 1.80122, 0, 1.77559 )
+
+[node name="machine_barrel" parent="machine_barrel6/tmpParent" index="0"]
+material/1 = ExtResource( 9 )
+
+[node name="machine_barrel3" parent="." instance=ExtResource( 2 )]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0.613717, 0, 1.02559 )
+
+[node name="machine_barrel" parent="machine_barrel3/tmpParent" index="0"]
+material/1 = ExtResource( 9 )
+
+[node name="machine_barrel4" parent="." instance=ExtResource( 2 )]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0.613717, 0, 1.15059 )
+
+[node name="machine_barrel" parent="machine_barrel4/tmpParent" index="0"]
+material/1 = ExtResource( 9 )
+
+[node name="machine_wirelessCable" parent="." instance=ExtResource( 3 )]
+transform = Transform( -1.09278e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -1.09278e-08, 0.993717, 0, 2.19059 )
+
+[node name="machine_wirelessCable" parent="machine_wirelessCable/tmpParent" index="0"]
+material/1 = ExtResource( 9 )
+
+[node name="hangar_smallB2" parent="." instance=ExtResource( 8 )]
+transform = Transform( -0.25, 0, -2.18557e-08, 0, 0.25, 0, 2.18557e-08, 0, -0.25, 2.2, 0, 2.125 )
+
+[node name="hangar_smallB" parent="hangar_smallB2/tmpParent" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 1.5 )
+material/2 = ExtResource( 9 )
+
+[node name="hangar_smallA" parent="hangar_smallB2" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2 )
+
+[node name="hangar_smallA" parent="hangar_smallB2/hangar_smallA/tmpParent" index="0"]
+material/2 = ExtResource( 9 )
+
+[node name="hangar_smallA3" parent="hangar_smallB2" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4 )
+
+[node name="hangar_smallA" parent="hangar_smallB2/hangar_smallA3/tmpParent" index="0"]
+material/2 = ExtResource( 9 )
+
+[node name="hangar_smallA4" parent="hangar_smallB2" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6 )
+
+[node name="hangar_smallA" parent="hangar_smallB2/hangar_smallA4/tmpParent" index="0"]
+material/2 = ExtResource( 9 )
+
+[node name="corridor2" parent="hangar_smallB2" instance=ExtResource( 7 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.8, 0, 7.8 )
+
+[node name="corridor" parent="hangar_smallB2/corridor2/tmpParent" index="0"]
+material/2 = ExtResource( 9 )
+
+[node name="corridor3" parent="hangar_smallB2" instance=ExtResource( 7 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.8, 0, 6.3 )
+
+[node name="corridor" parent="hangar_smallB2/corridor3/tmpParent" index="0"]
+material/2 = ExtResource( 9 )
+
+[node name="corridor7" parent="hangar_smallB2" instance=ExtResource( 7 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.8, 0, 7.8 )
+
+[node name="corridor" parent="hangar_smallB2/corridor7/tmpParent" index="0"]
+material/2 = ExtResource( 9 )
+
+[node name="corridor6" parent="hangar_smallB2" instance=ExtResource( 7 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.8, 0, 6.3 )
+
+[node name="corridor" parent="hangar_smallB2/corridor6/tmpParent" index="0"]
+material/2 = ExtResource( 9 )
+
+[node name="corridor9" parent="hangar_smallB2" instance=ExtResource( 7 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.8, 0, 6.3 )
+
+[node name="corridor" parent="hangar_smallB2/corridor9/tmpParent" index="0"]
+material/2 = ExtResource( 9 )
+
+[node name="corridor_cornerRound" parent="hangar_smallB2" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3, 0, 2.8 )
+
+[node name="corridor_cornerRound" parent="hangar_smallB2/corridor_cornerRound/tmpParent" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 1.5 )
+material/2 = ExtResource( 9 )
+
+[node name="hangar_roundGlass2" parent="hangar_smallB2/corridor_cornerRound" instance=ExtResource( 4 )]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 4, 0, 1.7 )
+
+[node name="hangar_roundGlass" parent="hangar_smallB2/corridor_cornerRound/hangar_roundGlass2/tmpParent" index="0"]
+material/0 = ExtResource( 9 )
+
+[node name="corridor_cornerRound2" parent="hangar_smallB2" instance=ExtResource( 6 )]
+transform = Transform( -1.98419e-09, 0, 1, 0, 1, 0, -1, 0, -1.98419e-09, 3.8, 0, 7.8 )
+
+[node name="corridor_cornerRound" parent="hangar_smallB2/corridor_cornerRound2/tmpParent" index="0"]
+material/2 = ExtResource( 9 )
+
+[node name="hangar_roundGlass" parent="hangar_smallB2/corridor_cornerRound2" instance=ExtResource( 4 )]
+transform = Transform( 8.9407e-08, 0, 1, 0, 1, 0, -1, 0, 8.9407e-08, -0.700001, 0, 3.4 )
+
+[node name="hangar_roundGlass" parent="hangar_smallB2/corridor_cornerRound2/hangar_roundGlass/tmpParent" index="0"]
+material/0 = ExtResource( 9 )
+
+[editable path="machine_barrelLarge"]
+[editable path="machine_barrel7"]
+[editable path="machine_barrel2"]
+[editable path="machine_barrel5"]
+[editable path="machine_barrel6"]
+[editable path="machine_barrel3"]
+[editable path="machine_barrel4"]
+[editable path="machine_wirelessCable"]
+[editable path="hangar_smallB2"]
+[editable path="hangar_smallB2/hangar_smallA"]
+[editable path="hangar_smallB2/hangar_smallA3"]
+[editable path="hangar_smallB2/hangar_smallA4"]
+[editable path="hangar_smallB2/corridor2"]
+[editable path="hangar_smallB2/corridor3"]
+[editable path="hangar_smallB2/corridor7"]
+[editable path="hangar_smallB2/corridor6"]
+[editable path="hangar_smallB2/corridor9"]
+[editable path="hangar_smallB2/corridor_cornerRound"]
+[editable path="hangar_smallB2/corridor_cornerRound/hangar_roundGlass2"]
+[editable path="hangar_smallB2/corridor_cornerRound2"]
+[editable path="hangar_smallB2/corridor_cornerRound2/hangar_roundGlass"]
