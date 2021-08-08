@@ -21,6 +21,7 @@ const PLOP_ALLOWED_MATERIAL: Material = preload("res://asset/plop_allowed.tres")
 const PLOP_FORBIDDEN_MATERIAL: Material = preload("res://asset/plop_forbidden.tres")
 
 export(Type) var type = Type.BLANK
+export var discovered = false
 
 onready var game: Node = find_parent("Game")
 
@@ -64,12 +65,20 @@ func _ready() -> void:
 			parent.remove_child(collider)
 			collider.queue_free()
 
-#	for _node in terrain:
-#		var node: Spatial = _node
-#		node.hide()
+	if !discovered:
+		for _node in terrain:
+			var node: Spatial = _node
+			node.hide()
+			$ClickArea/CollisionShape.disabled = true
 
 func _process(delta: float) -> void:
 	pass
+
+func discover() -> void:
+	for _node in terrain:
+		var node: Spatial = _node
+		node.show()
+		$ClickArea/CollisionShape.disabled = false
 
 func hover() -> void:
 	if !game.selected_building:
@@ -99,6 +108,46 @@ func plop(thing: Spatial):
 		thing.get_parent().remove_child(thing)
 	apply_mat_override_recursive(null, thing)
 	add_child(thing)
+	discover_neighbours()
+	if building.name == "TerrainScanner":
+		if link[Dir.NORTH]:
+			discover_neighbours(2)
+
+func discover_neighbours(depth: int = 0) -> void:
+	if depth == 0:
+		if link[Dir.NORTH]:
+			link[Dir.NORTH].discover()
+			if link[Dir.NORTH].link[Dir.EAST]:
+				link[Dir.NORTH].link[Dir.EAST].discover()
+		if link[Dir.EAST]:
+			link[Dir.EAST].discover()
+			if link[Dir.EAST].link[Dir.SOUTH]:
+				link[Dir.EAST].link[Dir.SOUTH].discover()
+		if link[Dir.SOUTH]:
+			link[Dir.SOUTH].discover()
+			if link[Dir.SOUTH].link[Dir.WEST]:
+				link[Dir.SOUTH].link[Dir.WEST].discover()
+		if link[Dir.WEST]:
+			link[Dir.WEST].discover()
+			if link[Dir.WEST].link[Dir.NORTH]:
+				link[Dir.WEST].link[Dir.NORTH].discover()
+	else:
+		if link[Dir.NORTH]:
+			link[Dir.NORTH].discover_neighbours(depth - 1)
+			if link[Dir.NORTH].link[Dir.EAST]:
+				link[Dir.NORTH].link[Dir.EAST].discover_neighbours(depth - 1)
+		if link[Dir.EAST]:
+			link[Dir.EAST].discover_neighbours(depth - 1)
+			if link[Dir.EAST].link[Dir.SOUTH]:
+				link[Dir.EAST].link[Dir.SOUTH].discover_neighbours(depth - 1)
+		if link[Dir.SOUTH]:
+			link[Dir.SOUTH].discover_neighbours(depth - 1)
+			if link[Dir.SOUTH].link[Dir.WEST]:
+				link[Dir.SOUTH].link[Dir.WEST].discover_neighbours(depth - 1)
+		if link[Dir.WEST]:
+			link[Dir.WEST].discover_neighbours(depth - 1)
+			if link[Dir.WEST].link[Dir.NORTH]:
+				link[Dir.WEST].link[Dir.NORTH].discover_neighbours(depth - 1)
 
 func can_plop(thing: Spatial) -> bool:
 	if (
