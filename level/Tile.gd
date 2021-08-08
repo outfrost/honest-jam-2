@@ -100,7 +100,18 @@ func plop(thing: Spatial):
 	add_child(thing)
 
 func can_plop(thing: Spatial) -> bool:
-	return !building && type in [Type.BUILD]
+	if (
+		building
+		|| thing.get("build_on") == null
+		|| thing.build_on != type
+	):
+		return false
+	if !thing.requires_neighbour:
+		return true
+	for dir in link:
+		if link[dir] && link[dir].type == thing.neighbour:
+			return true
+	return false
 
 func apply_mat_override_recursive(mat: Material, node: Node):
 	if node is MeshInstance:
