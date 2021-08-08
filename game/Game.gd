@@ -23,15 +23,15 @@ var hovered_tile: Tile = null
 var level = null
 var day = 0
 
-var win_climate:int = 100
-var win_food:int = 100
+var win_climate:int = 150
+var win_food:int = 150
 
 var power: int = 10
 var water: int = 0
 var climate: int = 5
 var food: int = 5
 var minerals: int = 0
-var metal: int = 15
+var metal: int = 10
 
 var power_flow: int = 0
 var water_flow: int = 0
@@ -136,7 +136,7 @@ func on_start_game() -> void:
 		+ "Good luck![/center]"
 	) % [day_limt, win_climate, win_food])
 	$UI/MessagePopup.show()
-#	yield($UI/MessagePopup, "dismissed")
+	$UI/ResourceView.update_resources()
 	transition_screen.fade_out()
 
 func back_to_menu() -> void:
@@ -144,6 +144,7 @@ func back_to_menu() -> void:
 	transition_screen.fade_in()
 	yield(transition_screen, "animation_finished")
 	$UI/MessagePopup.hide()
+	$UI/ConstructionUi.hide()
 	var nodes = level_container.get_children()
 	for node in nodes:
 		level_container.remove_child(node)
