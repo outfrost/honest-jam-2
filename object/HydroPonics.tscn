@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://asset/kenney/spacekit2/corridor_cornerRoundWindow.glb" type="PackedScene" id=1]
 [ext_resource path="res://asset/kenney/spacekit2/corridor_split.glb" type="PackedScene" id=2]
@@ -13,8 +13,10 @@
 [ext_resource path="res://asset/kenney/spacekit2/machine_barrel.glb" type="PackedScene" id=11]
 [ext_resource path="res://asset/kenney/spacekit2/corridor_end.glb" type="PackedScene" id=12]
 [ext_resource path="res://asset/metalHydroponics.material" type="Material" id=13]
+[ext_resource path="res://object/Building.gd" type="Script" id=14]
 
 [node name="HydroPonics" type="Spatial"]
+script = ExtResource( 14 )
 
 [node name="corridor_split" parent="." instance=ExtResource( 2 )]
 transform = Transform( 0.25, 0, -2.98023e-08, 0, 0.25, 0, 2.98023e-08, 0, 0.25, -0.125, 0, 1 )
@@ -104,7 +106,6 @@ material/1 = ExtResource( 13 )
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.5, 0, 3.5 )
 
 [node name="corridor_split" parent="corridor_split/corridor_cornerRoundWindow/corridor_split/tmpParent" index="0"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 1.5 )
 material/2 = ExtResource( 13 )
 
 [node name="corridor_split2" parent="corridor_split/corridor_cornerRoundWindow" instance=ExtResource( 2 )]

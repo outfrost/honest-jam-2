@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://asset/kenney/spacekit2/machine_barrelLarge.glb" type="PackedScene" id=1]
 [ext_resource path="res://asset/kenney/spacekit2/machine_barrel.glb" type="PackedScene" id=2]
@@ -9,8 +9,10 @@
 [ext_resource path="res://asset/kenney/spacekit2/corridor.glb" type="PackedScene" id=7]
 [ext_resource path="res://asset/kenney/spacekit2/hangar_smallB.glb" type="PackedScene" id=8]
 [ext_resource path="res://asset/metalLife.material" type="Material" id=9]
+[ext_resource path="res://object/Building.gd" type="Script" id=10]
 
 [node name="LifeSupport" type="Spatial"]
+script = ExtResource( 10 )
 
 [node name="machine_barrelLarge" parent="." instance=ExtResource( 1 )]
 transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0.708717, 0, 1.26959 )
@@ -64,7 +66,6 @@ material/1 = ExtResource( 9 )
 transform = Transform( -0.25, 0, -2.18557e-08, 0, 0.25, 0, 2.18557e-08, 0, -0.25, 2.2, 0, 2.125 )
 
 [node name="hangar_smallB" parent="hangar_smallB2/tmpParent" index="0"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 1.5 )
 material/2 = ExtResource( 9 )
 
 [node name="hangar_smallA" parent="hangar_smallB2" instance=ExtResource( 5 )]
@@ -119,7 +120,6 @@ material/2 = ExtResource( 9 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3, 0, 2.8 )
 
 [node name="corridor_cornerRound" parent="hangar_smallB2/corridor_cornerRound/tmpParent" index="0"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 1.5 )
 material/2 = ExtResource( 9 )
 
 [node name="hangar_roundGlass2" parent="hangar_smallB2/corridor_cornerRound" instance=ExtResource( 4 )]

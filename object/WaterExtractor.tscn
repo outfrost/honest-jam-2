@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://asset/kenney/spacekit2/platform_cornerOpen.glb" type="PackedScene" id=1]
 [ext_resource path="res://asset/kenney/spacekit2/supports_high.glb" type="PackedScene" id=2]
@@ -7,8 +7,10 @@
 [ext_resource path="res://asset/kenney/spacekit2/machine_generatorLarge.glb" type="PackedScene" id=5]
 [ext_resource path="res://asset/kenney/spacekit2/hangar_roundB.glb" type="PackedScene" id=6]
 [ext_resource path="res://asset/metalWater.material" type="Material" id=7]
+[ext_resource path="res://object/Building.gd" type="Script" id=8]
 
 [node name="WaterExtractor" type="Spatial"]
+script = ExtResource( 8 )
 
 [node name="platform_cornerOpen" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.45, 0 )
