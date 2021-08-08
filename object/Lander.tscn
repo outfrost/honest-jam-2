@@ -8,7 +8,7 @@
 [ext_resource path="res://asset/kenney/spacekit2/dark.material" type="Material" id=6]
 [ext_resource path="res://asset/kenney/spacekit2/metalRed.material" type="Material" id=7]
 [ext_resource path="res://asset/kenney/spacekit2/metalDark.material" type="Material" id=8]
-[ext_resource path="res://object/SolarArm.tscn" type="PackedScene" id=9]
+[ext_resource path="res://object/SolarArm_Long.tscn" type="PackedScene" id=9]
 
 [sub_resource type="CylinderMesh" id=4]
 top_radius = 0.538
@@ -26,7 +26,7 @@ size = Vector3( 0.5, 0.125, 0.25 )
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
 
 [node name="rocket_topA" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 4.85, -0.5 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 4.85, 2.5 )
 
 [node name="MeshInstance" type="MeshInstance" parent="rocket_topA"]
 transform = Transform( 0.923879, 0, 0.382683, 0, 1, 0, -0.382683, 0, 0.923879, 2, -3.625, 1.5 )
