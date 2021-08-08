@@ -3,7 +3,8 @@
 [ext_resource path="res://font/asset/AtkinsonHyperlegible/AtkinsonHyperlegible-Italic.ttf" type="DynamicFontData" id=1]
 
 [resource]
-size = 12
+size = 10
 use_filter = true
+extra_spacing_top = -2
 extra_spacing_bottom = -4
 font_data = ExtResource( 1 )

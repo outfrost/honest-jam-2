@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://font/main/tiny_reg.tres" type="DynamicFont" id=1]
-[ext_resource path="res://game/BuildingThumbnail.gd" type="Script" id=2]
+[ext_resource path="res://game/construction/BuildingThumbnail.gd" type="Script" id=2]
 [ext_resource path="res://icon.png" type="Texture" id=3]
 [ext_resource path="res://game/ui-theme/ui_theme.tres" type="Theme" id=4]
 
@@ -29,9 +29,11 @@ __meta__ = {
 }
 
 [node name="NameLabel" type="Label" parent="."]
-margin_right = 64.0
+margin_left = 2.0
+margin_right = 62.0
 margin_bottom = 56.0
 grow_horizontal = 2
+grow_vertical = 0
 custom_fonts/font = ExtResource( 1 )
 text = "Asd"
 align = 1
@@ -43,12 +45,12 @@ __meta__ = {
 
 [node name="CostLabel" type="Label" parent="."]
 margin_left = 2.0
-margin_top = 62.0
+margin_top = 61.0
 margin_right = 62.0
-margin_bottom = 78.0
+margin_bottom = 74.0
 grow_horizontal = 2
 custom_fonts/font = ExtResource( 1 )
-custom_colors/font_color = Color( 0.290196, 0.694118, 0.909804, 1 )
+custom_colors/font_color = Color( 0.235294, 0.733333, 1, 1 )
 text = "12 Metal"
 align = 1
 __meta__ = {
@@ -57,14 +59,18 @@ __meta__ = {
 
 [node name="ResLabel" type="Label" parent="."]
 margin_left = 2.0
-margin_top = 78.0
+margin_top = 74.0
 margin_right = 62.0
-margin_bottom = 110.0
+margin_bottom = 108.0
 grow_horizontal = 2
+grow_vertical = 0
 custom_fonts/font = ExtResource( 1 )
 text = "Pwr +4
+asd
+asd
 asd"
 align = 1
+valign = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }

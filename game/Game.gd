@@ -28,7 +28,6 @@ func _ready() -> void:
 	main_menu.connect("start_game", self, "on_start_game")
 
 	AudioServer.set_bus_volume_db(0, linear2db(0.5))
-	selected_building = preload("res://object/MineralExtractor.tscn").instance()
 
 func _process(delta: float) -> void:
 	DebugOverlay.display("fps %d" % Performance.get_monitor(Performance.TIME_FPS))
@@ -63,6 +62,7 @@ func _gui_input(event: InputEvent) -> void:
 		event is InputEventMouseButton
 		&& event.button_index == BUTTON_LEFT
 		&& event.pressed
+		&& selected_building
 	):
 		var pos: Vector2 = event.position
 		var tile: Tile = tile_under_mouse(pos)
