@@ -1,54 +1,80 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://asset/kenney/spacekit2/machine_wireless.glb" type="PackedScene" id=1]
-[ext_resource path="res://object/SolarPanel_Stationary.tscn" type="PackedScene" id=2]
+[ext_resource path="res://asset/kenney/spacekit2/metalDark.material" type="Material" id=2]
 [ext_resource path="res://asset/kenney/spacekit2/machine_generator.glb" type="PackedScene" id=3]
 [ext_resource path="res://object/Building.gd" type="Script" id=4]
+[ext_resource path="res://asset/kenney/spacekit2/metalRed.material" type="Material" id=5]
+[ext_resource path="res://object/SolarArm_Tall.tscn" type="PackedScene" id=6]
+[ext_resource path="res://asset/kenney/spacekit2/hangar_smallB.glb" type="PackedScene" id=7]
+[ext_resource path="res://asset/kenney/spacekit2/platform_small.glb" type="PackedScene" id=8]
+
+[sub_resource type="CubeMesh" id=1]
+size = Vector3( 0.125, 0.5, 0.125 )
+
+[sub_resource type="PrismMesh" id=2]
+size = Vector3( 0.25, 0.125, 0.125 )
 
 [node name="SolarArray" type="Spatial"]
 script = ExtResource( 4 )
 
-[node name="SolarPanel_Stationary" parent="." instance=ExtResource( 2 )]
-transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0.125, 0, 0.275 )
-
-[node name="SolarPanel_Stationary2" parent="SolarPanel_Stationary" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.025, 0, 2.05 )
-
-[node name="SolarPanel_Stationary3" parent="SolarPanel_Stationary" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.1 )
-
-[node name="SolarPanel_Stationary3" parent="." instance=ExtResource( 2 )]
-transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0.575, 0, 0.3 )
-
-[node name="SolarPanel_Stationary2" parent="SolarPanel_Stationary3" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.025, 0, 2.05 )
-
-[node name="SolarPanel_Stationary3" parent="SolarPanel_Stationary3" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.1 )
-
-[node name="SolarPanel_Stationary4" parent="." instance=ExtResource( 2 )]
-transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 1.125, 0, 0.307 )
-
-[node name="SolarPanel_Stationary2" parent="SolarPanel_Stationary4" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0250001, 0, 2.05 )
-
-[node name="SolarPanel_Stationary3" parent="SolarPanel_Stationary4" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.1 )
-
-[node name="SolarPanel_Stationary5" parent="." instance=ExtResource( 2 )]
-transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 1.65, 0, 0.375 )
-
-[node name="SolarPanel_Stationary2" parent="SolarPanel_Stationary5" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0269485, -0.0155845, 2.05 )
-
-[node name="SolarPanel_Stationary3" parent="SolarPanel_Stationary5" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.1 )
-
 [node name="machine_wireless" parent="." instance=ExtResource( 1 )]
-transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -0.35, 0, 1.39505 )
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0.545, 0, 1.1 )
 
 [node name="machine_generator" parent="machine_wireless" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0, 0 )
 
 [node name="machine_generator2" parent="machine_wireless" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0, 0.525 )
+
+[node name="hangar_smallB" parent="." instance=ExtResource( 7 )]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -0.2, 0, 0 )
+
+[node name="hangar_smallB2" parent="hangar_smallB" instance=ExtResource( 7 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4, 0, 5 )
+
+[node name="platform_small" parent="." instance=ExtResource( 8 )]
+transform = Transform( 0.75, 0, 0, 0, 0.125, 0, 0, 0, 0.75, -0.25, 0, -0.125 )
+
+[node name="MeshInstance" type="MeshInstance" parent="platform_small"]
+transform = Transform( 1.33333, 0, 0, 0, 8, 0, 0, 0, 1.33333, 2.004, 2, 1.5 )
+mesh = SubResource( 1 )
+material/0 = ExtResource( 2 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="platform_small/MeshInstance"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05, -0.2, 0 )
+mesh = SubResource( 2 )
+material/0 = ExtResource( 5 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="platform_small/MeshInstance"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05, -0.2, 0 )
+mesh = SubResource( 2 )
+material/0 = ExtResource( 5 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="platform_small/MeshInstance"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, -0.2, 0.05 )
+mesh = SubResource( 2 )
+material/0 = ExtResource( 5 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="platform_small/MeshInstance"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, -0.2, -0.05 )
+mesh = SubResource( 2 )
+material/0 = ExtResource( 5 )
+
+[node name="SolarArm_Tall" parent="platform_small/MeshInstance" instance=ExtResource( 6 )]
+transform = Transform( -1.41417e-09, 0.120741, 0.0323524, 5.27774e-09, 0.0323524, -0.120741, -0.125, 0, -5.46392e-09, -0.000324726, 0.226074, -0.0597426 )
+
+[node name="SolarArm_Tall2" parent="platform_small/MeshInstance/SolarArm_Tall" instance=ExtResource( 6 )]
+transform = Transform( 1, -1.77636e-15, 0, 0, 1, 3.88235e-23, 0, -3.88235e-23, 1, 2, 0, 0 )
+
+[node name="SolarArm_Tall3" parent="platform_small/MeshInstance/SolarArm_Tall" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0 )
+
+[node name="SolarArm_Tall2" parent="platform_small/MeshInstance" instance=ExtResource( 6 )]
+transform = Transform( -7.03972e-09, 0.120741, -0.0323524, -1.01586e-08, 0.0323524, 0.120741, 0.125, 1.30385e-08, 8.3819e-09, 0, 0.225, 0.06 )
+
+[node name="SolarArm_Tall2" parent="platform_small/MeshInstance/SolarArm_Tall2" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 5.05815e-15, 0, 6.66774e-15, 1, 2, 0, -1.19209e-07 )
+
+[node name="SolarArm_Tall3" parent="platform_small/MeshInstance/SolarArm_Tall2" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0 )
