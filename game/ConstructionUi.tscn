@@ -1,12 +1,15 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://game/ui-theme/ui_theme.tres" type="Theme" id=1]
+[ext_resource path="res://game/ConstructionUi.gd" type="Script" id=2]
+[ext_resource path="res://game/BuildingThumbnail.tscn" type="PackedScene" id=3]
 
 [node name="ConstructionUi" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 theme = ExtResource( 1 )
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -39,3 +42,44 @@ margin_right = -64.0
 margin_bottom = 192.0
 grow_horizontal = 0
 grow_vertical = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="PopupPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.0
+margin_top = 1.0
+margin_right = -1.0
+margin_bottom = -1.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 1
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_constants/margin_right = 16
+custom_constants/margin_top = 16
+custom_constants/margin_left = 16
+custom_constants/margin_bottom = 16
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="PopupPanel/MarginContainer"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 238.0
+margin_bottom = 366.0
+custom_constants/vseparation = 8
+custom_constants/hseparation = 16
+columns = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BuildingThumbnail" parent="PopupPanel/MarginContainer/GridContainer" instance=ExtResource( 3 )]
+
+[node name="BuildingThumbnail2" parent="PopupPanel/MarginContainer/GridContainer" instance=ExtResource( 3 )]
+margin_left = 80.0
+margin_right = 144.0

@@ -72,6 +72,8 @@ func _process(delta: float) -> void:
 	pass
 
 func hover() -> void:
+	if !game.selected_building:
+		return
 	if game.selected_building.get_parent():
 		game.selected_building.get_parent().remove_child(game.selected_building)
 	add_child(game.selected_building)
@@ -81,9 +83,21 @@ func hover() -> void:
 		apply_mat_override_recursive(PLOP_FORBIDDEN_MATERIAL, game.selected_building)
 
 func unhover() -> void:
+	if !game.selected_building:
+		return
 	if game.selected_building.get_parent() == self:
 		apply_mat_override_recursive(null, game.selected_building)
 		remove_child(game.selected_building)
+
+func plop(thing: Spatial):
+	if building:
+		push_error("Cannot plop: there already is a building here (%s)")
+		return
+	building = thing
+	if thing.get_parent():
+		thing.get_parent().remove_child(thing)
+	apply_mat_override_recursive(null, thing)
+	add_child(thing)
 
 func can_plop(thing: Spatial) -> bool:
 	return !building && type in [Type.BUILD]
