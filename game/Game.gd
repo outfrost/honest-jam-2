@@ -144,7 +144,7 @@ func back_to_menu() -> void:
 	transition_screen.fade_in()
 	yield(transition_screen, "animation_finished")
 	$UI/MessagePopup.hide()
-	$UI/ConstructionUi.hide()
+	$UI/ConstructionUi/PopupPanel.hide()
 	var nodes = level_container.get_children()
 	for node in nodes:
 		level_container.remove_child(node)

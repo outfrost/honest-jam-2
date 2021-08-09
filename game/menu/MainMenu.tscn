@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://asset/Wolf1061.jpg" type="Texture" id=1]
 [ext_resource path="res://game/menu/CreditsPopup.gd" type="Script" id=2]
@@ -6,6 +6,14 @@
 [ext_resource path="res://game/menu/MainMenu.gd" type="Script" id=4]
 [ext_resource path="res://game/ui-theme/panel_style_popup.tres" type="StyleBox" id=5]
 [ext_resource path="res://fx/menu_vignette.tres" type="Material" id=6]
+[ext_resource path="res://font/main/mlarge_bold.tres" type="DynamicFont" id=7]
+[ext_resource path="res://font/main/mlarge_bold_ita.tres" type="DynamicFont" id=8]
+[ext_resource path="res://font/main/mlarge_reg.tres" type="DynamicFont" id=9]
+[ext_resource path="res://font/main/mlarge_reg_ita.tres" type="DynamicFont" id=10]
+[ext_resource path="res://font/main/large_bold.tres" type="DynamicFont" id=11]
+[ext_resource path="res://font/main/large_reg.tres" type="DynamicFont" id=12]
+[ext_resource path="res://font/main/large_bold_ita.tres" type="DynamicFont" id=13]
+[ext_resource path="res://font/main/large_reg_ita.tres" type="DynamicFont" id=14]
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
@@ -48,7 +56,7 @@ margin_top = -64.0
 margin_right = 512.0
 margin_bottom = -8.0
 grow_vertical = 0
-text = "v0.1.4"
+text = "v0.1.5"
 valign = 2
 __meta__ = {
 "_edit_use_anchors_": false
@@ -60,8 +68,13 @@ anchor_top = 0.1
 anchor_right = 0.95
 anchor_bottom = 0.5
 theme = ExtResource( 3 )
+custom_fonts/bold_italics_font = ExtResource( 13 )
+custom_fonts/italics_font = ExtResource( 14 )
+custom_fonts/bold_font = ExtResource( 11 )
+custom_fonts/normal_font = ExtResource( 12 )
 bbcode_enabled = true
-bbcode_text = "[center][/center]"
+bbcode_text = "[center][b]Twilight Zone[/b][/center]"
+text = "Twilight Zone"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -150,7 +163,41 @@ margin_left = 16.0
 margin_top = 16.0
 margin_right = -8.0
 margin_bottom = -61.0
+custom_fonts/bold_italics_font = ExtResource( 8 )
+custom_fonts/italics_font = ExtResource( 10 )
+custom_fonts/bold_font = ExtResource( 7 )
+custom_fonts/normal_font = ExtResource( 9 )
 bbcode_enabled = true
+bbcode_text = "[center]Programming
+[b]Outfrost, 666Savior[/b]
+
+Level & Building Design
+[b]666Savior[/b]
+
+Music
+[b]Marek Domagała[/b]
+
+UX design, VFX
+[b]Outfrost[/b]
+
+
+
+An [b][url=https://itch.io/jam/honest-jam-2]Honest Jam 2[/url][/b] game[/center]"
+text = "Programming
+Outfrost, 666Savior
+
+Level & Building Design
+666Savior
+
+Music
+Marek Domagała
+
+UX design, VFX
+Outfrost
+
+
+
+An Honest Jam 2 game"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -163,7 +210,41 @@ margin_left = 8.0
 margin_top = 16.0
 margin_right = -16.0
 margin_bottom = -61.0
+custom_fonts/bold_italics_font = ExtResource( 8 )
+custom_fonts/italics_font = ExtResource( 10 )
+custom_fonts/bold_font = ExtResource( 7 )
+custom_fonts/normal_font = ExtResource( 9 )
 bbcode_enabled = true
+bbcode_text = "[center]3D models
+[b][url=https://kenney.nl/]Kenney.nl[/url][/b]
+
+Main menu picture
+[b]NASA/JPL-Caltech[/b]
+
+Font - Atkinson Hyperlegible
+[b]Braille Institute of America[/b]
+
+
+
+
+
+Made with
+[b][url=https://godotengine.org/]Godot Engine 3.3.2[/url][/b][/center]"
+text = "3D models
+Kenney.nl
+
+Main menu picture
+NASA/JPL-Caltech
+
+Font - Atkinson Hyperlegible
+Braille Institute of America
+
+
+
+
+
+Made with
+Godot Engine 3.3.2"
 __meta__ = {
 "_edit_use_anchors_": false
 }
