@@ -109,12 +109,12 @@ func plop(thing: Spatial):
 	apply_mat_override_recursive(null, thing)
 	add_child(thing)
 	discover_neighbours()
-	if building.name == "TerrainScanner":
-		if link[Dir.NORTH]:
-			discover_neighbours(1)
+	if "TerrainScanner" in building.name:
+		discover_neighbours(1)
 
 func discover_neighbours(depth: int = 0) -> void:
 	if depth == 0:
+		discover()
 		if link[Dir.NORTH]:
 			link[Dir.NORTH].discover()
 			if link[Dir.NORTH].link[Dir.EAST]:
