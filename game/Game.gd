@@ -145,6 +145,11 @@ func back_to_menu() -> void:
 	yield(transition_screen, "animation_finished")
 	$UI/MessagePopup.hide()
 	$UI/ConstructionUi/PopupPanel.hide()
+	if selected_building:
+		if selected_building.get_parent():
+			selected_building.get_parent().remove_child(selected_building)
+		selected_building.queue_free()
+		selected_building = null
 	var nodes = level_container.get_children()
 	for node in nodes:
 		level_container.remove_child(node)
